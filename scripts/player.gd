@@ -7,6 +7,9 @@ var inputs = {
 	"down": Vector2.DOWN}
 
 func _unhandled_input(event: InputEvent) -> void:
+	if moving:
+		return
 	for direction in inputs.keys():
 		if event.is_action_pressed(direction):
-			move(inputs[direction])
+			if can_move(inputs[direction]):
+				move(inputs[direction])
