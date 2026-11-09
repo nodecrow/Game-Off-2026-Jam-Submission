@@ -10,6 +10,7 @@ const SPOT_ID = 2
 const PLAYER_ID = 3
 
 var tilemap: TileMapLayer
+var colormap: Array[Node]
 var spots: Array[Spot]
 var moveables: Array[Moveable]
 var past_turns: Array[Array]
@@ -17,9 +18,11 @@ var past_turns: Array[Array]
 func _ready() -> void:
 	get_tree().scene_changed.connect(level_changed)
 	level_changed()
+	print(colormap)
 
 func level_changed() -> void:
 	tilemap = get_tree().get_first_node_in_group("LevelTileMap")
+	colormap = get_tree().get_nodes_in_group("ColorLayers")
 	past_turns.clear()
 
 func is_tile_wall(tile: Vector2i) -> bool:
@@ -48,9 +51,7 @@ func is_all_spots_covered() -> bool:
 		return false
 	for spot in spots:
 		var moveable: Moveable = get_moveable_at_tile(spot.cell)
-		if moveable is not Crate or moveable == null:
-			return false
-		if moveable.crate_color != spot.spot_color:
+		if moveable is not Crate or moveable.hue != spot.hue:
 			return false
 	return true
 

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cl447tcht5s3w"]
+
+[ext_resource type="TileSet" uid="uid://bhkcc55g7eyp1" path="res://assets/wall_tile_set.tres" id="1_elrda"]
+[ext_resource type="Script" uid="uid://cvn1sgrdaumt1" path="res://scripts/layer.gd" id="2_x7uhc"]
+
+[node name="YellowLayer" type="TileMapLayer" unique_id=296362565 groups=["ColorLayers"]]
+tile_set = ExtResource("1_elrda")
+script = ExtResource("2_x7uhc")
+hue = 3

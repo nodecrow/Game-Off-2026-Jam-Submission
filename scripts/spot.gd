@@ -1,7 +1,7 @@
 extends Node2D
 class_name Spot
 
-@export var spot_color: Palette.Hue
+@export var hue: Palette.Hue
 
 var cell: Vector2i 
 var tilemap: TileMapLayer = Level.tilemap
@@ -16,7 +16,7 @@ func _exit_tree() -> void:
 
 func _ready() -> void:
 	cell = tilemap.local_to_map(tilemap.to_local(global_position))
-	set_color(Palette.get_color(spot_color))
+	set_color(Palette.get_color(hue))
 
 func set_color(color: Color) -> void:
 	spot_sprite.modulate = color
