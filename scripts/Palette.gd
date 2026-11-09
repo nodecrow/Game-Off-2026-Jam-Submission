@@ -5,7 +5,8 @@ enum Hue {
 	RED,
 	GREEN,
 	BLUE,
-	YELLOW
+	YELLOW,
+	WHITE,
 }
 
 const COLORS = {
@@ -13,6 +14,7 @@ const COLORS = {
 	Hue.GREEN: Color.GREEN,
 	Hue.BLUE: Color.BLUE,
 	Hue.YELLOW: Color.YELLOW,
+	Hue.WHITE: Color.WHITE,
 }
 
 static func get_color(hue: Hue) -> Color:

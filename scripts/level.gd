@@ -9,7 +9,7 @@ const CRATE_ID = 1
 const SPOT_ID = 2
 const PLAYER_ID = 3
 
-var level_hue: Palette.Hue
+var level_hue: Palette.Hue = Palette.Hue.WHITE
 var base_layer: TileMapLayer
 var floor_layer: TileMapLayer
 var color_layers: Array[Node]
@@ -64,6 +64,14 @@ func shift_color(hue: Palette.Hue) -> void:
 	level_hue = hue
 	for layer: Layer in color_layers:
 		layer.on_level_hue_changed(level_hue)
+		
+	for spot: Spot in spots:
+		spot.on_level_hue_changed(level_hue)
+	
+	for moveable: Moveable in moveables:
+		if moveable is Crate:
+			moveable.on_level_hue_changed(level_hue)
+	
 	floor_layer.modulate = Palette.get_color(hue)
 
 func game_over() -> void:

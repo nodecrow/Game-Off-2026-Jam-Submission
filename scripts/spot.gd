@@ -20,3 +20,9 @@ func _ready() -> void:
 
 func set_color(color: Color) -> void:
 	spot_sprite.modulate = color
+
+func on_level_hue_changed(layer_hue: Palette.Hue) -> void:
+	if hue == layer_hue:
+		self.visible = false
+	else:
+		self.visible = true
