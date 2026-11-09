@@ -10,6 +10,7 @@ const SPOT_ID = 2
 const PLAYER_ID = 3
 
 var tilemap: TileMapLayer
+var spots: Array[Spot]
 var moveables: Array[Moveable]
 var past_turns: Array[Array]
 
@@ -43,12 +44,13 @@ func undo_last_move() -> void:
 			move.node.slide(-move.direction)
 
 func is_all_spots_covered() -> bool:
-	var spots: Array[Vector2i] = tilemap.get_used_cells_by_id(SPOT_ID)	
 	if spots.is_empty():
 		return false
 	for spot in spots:
-		var object_on_spot: Moveable = get_moveable_at_tile(spot)
-		if object_on_spot == null or object_on_spot is not Crate:
+		var moveable: Moveable = get_moveable_at_tile(spot.cell)
+		if moveable is not Crate or moveable == null:
+			return false
+		if moveable.crate_color != spot.spot_color:
 			return false
 	return true
 

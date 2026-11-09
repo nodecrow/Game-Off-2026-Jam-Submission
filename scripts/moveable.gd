@@ -12,7 +12,6 @@ func _enter_tree() -> void:
 
 func _exit_tree() -> void:
 	Level.moveables.erase(self)
-	
 
 func _ready() -> void:
 	cell = tilemap.local_to_map(tilemap.to_local(global_position))

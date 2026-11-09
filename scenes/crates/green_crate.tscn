@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ccuj0d2d6xr8r"]
 
-[ext_resource type="PackedScene" uid="uid://dq7olq4s2o1je" path="res://scenes/crate.tscn" id="1_dnrsp"]
+[ext_resource type="PackedScene" uid="uid://dq7olq4s2o1je" path="res://scenes/crates/crate.tscn" id="1_dnrsp"]
 
 [node name="Crate" unique_id=2039027893 instance=ExtResource("1_dnrsp")]
 crate_color = 1
