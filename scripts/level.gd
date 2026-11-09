@@ -6,6 +6,8 @@ class Move:
 
 var tilemap: TileMapLayer
 var moveables: Array[Moveable]
+var spots: Array[Spot]
+var spots_covered: int = 0
 var past_turns: Array[Array]
 
 func _ready() -> void:
@@ -15,6 +17,7 @@ func _ready() -> void:
 func level_changed() -> void:
 	tilemap = get_tree().get_first_node_in_group("LevelTileMap")
 	past_turns.clear()
+	
 
 func is_tile_wall(tile: Vector2) -> bool:
 	return tilemap != null and tilemap.get_cell_source_id(tile) == 0
@@ -24,6 +27,7 @@ func get_moveable_at_tile(tile: Vector2) -> Moveable:
 		if (node.position / node.tile_size) == tile:
 			return node
 	return null
+
 
 func add_move_to_turn(node: Moveable, direction: Vector2) -> void:
 	var move := Move.new()
@@ -36,3 +40,6 @@ func undo_last_move() -> void:
 		var last_moves: Array = past_turns.pop_back()
 		for move: Move in last_moves:
 			move.node.slide(-move.direction)
+
+func game_over() -> void:
+	print("WIN")
