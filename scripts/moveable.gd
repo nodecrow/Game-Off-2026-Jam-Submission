@@ -5,7 +5,7 @@ var animation_speed: float = 0.15
 var tween: Tween
 var moving: bool = false
 var cell: Vector2i
-var tilemap: TileMapLayer = Level.tilemap
+var base_layer: TileMapLayer = Level.base_layer
 
 func _enter_tree() -> void:
 	Level.moveables.append(self)
@@ -14,7 +14,7 @@ func _exit_tree() -> void:
 	Level.moveables.erase(self)
 
 func _ready() -> void:
-	cell = tilemap.local_to_map(tilemap.to_local(global_position))
+	cell = base_layer.local_to_map(base_layer.to_local(global_position))
 
 # Future Note For Self: Walk through simple example to understand recursion Player -> Box1 -> Box2 -> OpenTile
 # Recursion collapses into a single true/false 
@@ -42,7 +42,7 @@ func slide(direction: Vector2i) -> void:
 	cell += direction
 	tween = create_tween()
 	tween.tween_property(self, "global_position",
-		tilemap.to_global(tilemap.map_to_local(cell)), animation_speed).set_trans(Tween.TRANS_SINE)
+		base_layer.to_global(base_layer.map_to_local(cell)), animation_speed).set_trans(Tween.TRANS_SINE)
 	moving = true
 	await tween.finished
 	moving = false

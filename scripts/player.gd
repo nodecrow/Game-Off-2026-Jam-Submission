@@ -20,3 +20,12 @@ func _unhandled_input(event: InputEvent) -> void:
 	
 	if event.is_action_pressed("undo", true):
 		Level.undo_last_move()
+	
+	if event.is_action_pressed("blue"):
+		Level.shift_color(Palette.Hue.BLUE)
+	if event.is_action_pressed("red"):
+		Level.shift_color(Palette.Hue.RED)
+	if event.is_action_pressed("yellow"):
+		Level.shift_color(Palette.Hue.YELLOW)
+	if event.is_action_pressed("green"):
+		Level.shift_color(Palette.Hue.GREEN)

@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://c6685qc5ta6ci"]
+
+[ext_resource type="Texture2D" uid="uid://otnwxmfroatb" path="res://assets/floor.png" id="1_otner"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_okeva"]
+texture = ExtResource("1_otner")
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_g4v7s"]
+sources/0 = SubResource("TileSetAtlasSource_okeva")
+
+[node name="TileMapLayer" type="TileMapLayer" unique_id=379000185 groups=["FloorLayer"]]
+tile_set = SubResource("TileSet_g4v7s")
