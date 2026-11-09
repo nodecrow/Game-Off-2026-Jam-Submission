@@ -4,7 +4,8 @@ var inputs = {
 	"right": Vector2.RIGHT,
 	"left": Vector2.LEFT,
 	"up": Vector2.UP,
-	"down": Vector2.DOWN}
+	"down": Vector2.DOWN
+	}
 
 func _unhandled_input(event: InputEvent) -> void:
 	if moving:
@@ -12,4 +13,8 @@ func _unhandled_input(event: InputEvent) -> void:
 	for direction in inputs.keys():
 		if event.is_action_pressed(direction):
 			if can_move(inputs[direction]):
+				Level.past_turns.append([])
 				move(inputs[direction])
+	
+	if event.is_action_pressed("undo"):
+		Level.undo_last_move()

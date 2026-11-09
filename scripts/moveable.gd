@@ -24,11 +24,15 @@ func can_move(direction: Vector2) -> bool:
 	return true
 
 # A continuation of above, this function gets all of the moveables in the chain and recurses slide() on each of them
+# The recursion also works here for tracking the moves. Each key press initiates an empty Array
+# Recursion collapses each add_move_to_turn into the array
 func move(direction: Vector2) -> void:
 	var moveable: Moveable = Level.get_moveable_at_tile(position / tile_size + direction)
 	if moveable:
 		moveable.move(direction)
 	slide(direction)
+	
+	Level.add_move_to_turn(self, direction)
 
 func slide(direction: Vector2) -> void:
 	tween = create_tween()
