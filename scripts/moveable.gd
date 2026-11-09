@@ -7,16 +7,16 @@ var moving: bool = false
 var cell: Vector2i
 var tilemap: TileMapLayer = Level.tilemap
 
-func _ready() -> void:
-	cell = tilemap.local_to_map(tilemap.to_local(global_position))
-	print(cell)
-
 func _enter_tree() -> void:
 	Level.moveables.append(self)
 
 func _exit_tree() -> void:
 	Level.moveables.erase(self)
 	
+
+func _ready() -> void:
+	cell = tilemap.local_to_map(tilemap.to_local(global_position))
+
 # Future Note For Self: Walk through simple example to understand recursion Player -> Box1 -> Box2 -> OpenTile
 # Recursion collapses into a single true/false 
 func can_move(direction: Vector2i) -> bool:
@@ -38,9 +38,9 @@ func move(direction: Vector2i) -> void:
 	slide(direction)
 	Level.add_move_to_turn(self, direction)
 
+
 func slide(direction: Vector2i) -> void:
 	cell += direction
-	print(cell)
 	tween = create_tween()
 	tween.tween_property(self, "global_position",
 		tilemap.to_global(tilemap.map_to_local(cell)), animation_speed).set_trans(Tween.TRANS_SINE)

@@ -15,6 +15,8 @@ func _unhandled_input(event: InputEvent) -> void:
 			if can_move(inputs[direction]):
 				Level.past_turns.append([])
 				move(inputs[direction])
+				if Level.is_all_spots_covered():
+					Level.game_over()
 	
-	if event.is_action_pressed("undo"):
+	if event.is_action_pressed("undo", true):
 		Level.undo_last_move()

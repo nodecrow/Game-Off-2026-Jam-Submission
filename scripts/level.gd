@@ -4,10 +4,14 @@ class Move:
 	var node: Moveable
 	var direction: Vector2
 
+const WALL_ID = 0
+const CRATE_ID = 2
+const SPOT_ID = 3
+const PLAYER_ID = 4
+
 var tilemap: TileMapLayer
 var moveables: Array[Moveable]
 var past_turns: Array[Array]
-
 
 func _ready() -> void:
 	get_tree().scene_changed.connect(level_changed)
@@ -19,7 +23,7 @@ func level_changed() -> void:
 	
 
 func is_tile_wall(tile: Vector2i) -> bool:
-	return tilemap != null and tilemap.get_cell_source_id(tile) == 0
+	return tilemap != null and tilemap.get_cell_source_id(tile) == WALL_ID
 
 func get_moveable_at_tile(tile: Vector2i) -> Moveable:
 	for node: Moveable in moveables:
@@ -38,6 +42,14 @@ func undo_last_move() -> void:
 		var last_moves: Array = past_turns.pop_back()
 		for move: Move in last_moves:
 			move.node.slide(-move.direction)
+
+func is_all_spots_covered() -> bool:
+	var spots: Array[Vector2i] = tilemap.get_used_cells_by_id(SPOT_ID)	
+	for spot in spots:
+		var object_on_spot: Moveable = get_moveable_at_tile(spot)
+		if object_on_spot == null or object_on_spot is not Crate:
+			return false
+	return true
 
 func game_over() -> void:
 	print("WIN")

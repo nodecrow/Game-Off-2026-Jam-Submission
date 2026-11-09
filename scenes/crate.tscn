@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://dq7olq4s2o1je"]
 
-[ext_resource type="Script" uid="uid://dow4v8lya17na" path="res://scripts/moveable.gd" id="1_b66cd"]
+[ext_resource type="Script" uid="uid://denajvidqdtro" path="res://scripts/crate.gd" id="1_dwt0d"]
 [ext_resource type="Texture2D" uid="uid://bhhnylukydemq" path="res://assets/crate.png" id="2_dwt0d"]
 
 [node name="Crate" type="Node2D" unique_id=2039027893]
-script = ExtResource("1_b66cd")
+script = ExtResource("1_dwt0d")
 metadata/_custom_type_script = "uid://dow4v8lya17na"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1569421116]
