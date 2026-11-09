@@ -6,9 +6,8 @@ class Move:
 
 var tilemap: TileMapLayer
 var moveables: Array[Moveable]
-var spots: Array[Spot]
-var spots_covered: int = 0
 var past_turns: Array[Array]
+
 
 func _ready() -> void:
 	get_tree().scene_changed.connect(level_changed)
@@ -19,17 +18,16 @@ func level_changed() -> void:
 	past_turns.clear()
 	
 
-func is_tile_wall(tile: Vector2) -> bool:
+func is_tile_wall(tile: Vector2i) -> bool:
 	return tilemap != null and tilemap.get_cell_source_id(tile) == 0
 
-func get_moveable_at_tile(tile: Vector2) -> Moveable:
+func get_moveable_at_tile(tile: Vector2i) -> Moveable:
 	for node: Moveable in moveables:
-		if (node.position / node.tile_size) == tile:
+		if node.cell == tile:
 			return node
 	return null
 
-
-func add_move_to_turn(node: Moveable, direction: Vector2) -> void:
+func add_move_to_turn(node: Moveable, direction: Vector2i) -> void:
 	var move := Move.new()
 	move.node = node
 	move.direction = direction
