@@ -1,7 +1,7 @@
 extends Node2D
 class_name Moveable
 
-
+var animation_speed: float = 0.2
 var tile_size: int = 16
 var tween: Tween
 
@@ -16,4 +16,6 @@ func move(direction: Vector2) -> void:
 	slide(direction)
 
 func slide(direction: Vector2) -> void:
-	position += direction * tile_size
+	tween = create_tween()
+	tween.tween_property(self, "position",
+		position + direction * tile_size, animation_speed).set_trans(Tween.TRANS_SINE)
