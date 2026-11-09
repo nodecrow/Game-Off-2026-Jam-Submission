@@ -5,7 +5,9 @@
 
 [node name="Crate" type="Node2D" unique_id=2039027893]
 script = ExtResource("1_dwt0d")
+crate_color = null
 metadata/_custom_type_script = "uid://dow4v8lya17na"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1569421116]
+unique_name_in_owner = true
 texture = ExtResource("2_dwt0d")

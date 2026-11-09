@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dqilw046wbr6l"]
+
+[ext_resource type="PackedScene" uid="uid://dq7olq4s2o1je" path="res://scenes/crate.tscn" id="1_2rrka"]
+
+[node name="Crate" unique_id=2039027893 instance=ExtResource("1_2rrka")]
+crate_color = 2
