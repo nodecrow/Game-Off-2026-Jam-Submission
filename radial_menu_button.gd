@@ -20,7 +20,7 @@ func _ready() -> void:
 			selected_hue = b.hue)
 		b.position = position
 		
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	global_position = Level.player.get_global_transform_with_canvas().origin
 
 func _unhandled_input(event: InputEvent) -> void:

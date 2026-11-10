@@ -107,7 +107,7 @@ func can_shift(new_hue: Palette.Hue) -> bool:
 	# color layer
 	if current_layer != null:
 		for moveable: Moveable in moveables:
-			if current_layer.get_cell_source_id(moveable.cell) != -1:
+			if current_layer.get_cell_source_id(moveable.cell) == WALL_ID:
 				return false
 	
 	# Checks if a crate OR player is in the spot of an invisible crate
