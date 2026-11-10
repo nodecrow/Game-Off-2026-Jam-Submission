@@ -35,7 +35,7 @@ func is_tile_wall(tile: Vector2i) -> bool:
 
 func get_moveable_at_tile(tile: Vector2i) -> Moveable:
 	for node: Moveable in moveables:
-		if node.cell == tile:
+		if node.cell == tile and not (node is Crate and node.hue == level_hue):
 			return node
 	return null
 
@@ -61,6 +61,9 @@ func is_all_spots_covered() -> bool:
 	return true
 
 func shift_color(hue: Palette.Hue) -> void:
+	if not can_shift(hue):
+		return
+		
 	level_hue = hue
 	for layer: Layer in color_layers:
 		layer.on_level_hue_changed(level_hue)
@@ -73,6 +76,19 @@ func shift_color(hue: Palette.Hue) -> void:
 			moveable.on_level_hue_changed(level_hue)
 	
 	floor_layer.modulate = Palette.get_color(hue)
+
+func can_shift(new_hue: Palette.Hue) -> bool:
+	if new_hue == level_hue:
+		return true
+	
+	for moveable: Moveable in moveables:
+		if moveable is Crate and moveable.hue == level_hue:
+			continue
+		for layer: Layer in color_layers:
+			if layer.hue == level_hue:
+				if layer.get_cell_source_id(moveable.cell) != -1:
+					return false
+	return true
 
 func game_over() -> void:
 	print("WIN")

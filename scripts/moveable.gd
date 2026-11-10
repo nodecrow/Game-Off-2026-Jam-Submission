@@ -21,8 +21,8 @@ func _ready() -> void:
 func can_move(direction: Vector2i) -> bool:
 	if Level.is_tile_wall(cell + direction):
 		return false
-
-	var moveable: Moveable = Level.get_moveable_at_tile(cell + direction)
+	
+	var moveable: Moveable = Level.get_moveable_at_tile(cell + direction) 
 	if moveable:
 		return moveable.can_move(direction)
 	return true
