@@ -1,4 +1,5 @@
 extends Moveable
+class_name Player
 
 var inputs = {
 	"right": Vector2i.RIGHT,

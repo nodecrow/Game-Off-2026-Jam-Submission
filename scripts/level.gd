@@ -4,6 +4,9 @@ class Move:
 	var node: Moveable
 	var direction: Vector2
 
+class ColorShift:
+	var old_hue: Palette.Hue
+
 const WALL_ID = 0
 const CRATE_ID = 1
 const SPOT_ID = 2
@@ -48,8 +51,11 @@ func add_move_to_turn(node: Moveable, direction: Vector2i) -> void:
 func undo_last_move() -> void:
 	if not past_turns.is_empty():
 		var last_moves: Array = past_turns.pop_back()
-		for move: Move in last_moves:
-			move.node.slide(-move.direction)
+		for move in last_moves:
+			if move is Move:
+				move.node.slide(-move.direction)
+			if move is ColorShift:
+				apply_hue(move.old_hue)
 
 func is_all_spots_covered() -> bool:
 	if spots.is_empty():
@@ -60,11 +66,18 @@ func is_all_spots_covered() -> bool:
 			return false
 	return true
 
-func shift_color(hue: Palette.Hue) -> void:
-	if not can_shift(hue):
+func shift_color(new_hue: Palette.Hue) -> void:
+	if not can_shift(new_hue):
 		return
-		
-	level_hue = hue
+	
+	past_turns.append([])
+	var color_change = ColorShift.new()
+	color_change.old_hue = level_hue
+	past_turns.back().append(color_change)
+	apply_hue(new_hue)
+
+func apply_hue(new_hue: Palette.Hue) -> void:
+	level_hue = new_hue
 	for layer: Layer in color_layers:
 		layer.on_level_hue_changed(level_hue)
 		
@@ -75,18 +88,42 @@ func shift_color(hue: Palette.Hue) -> void:
 		if moveable is Crate:
 			moveable.on_level_hue_changed(level_hue)
 	
-	floor_layer.modulate = Palette.get_color(hue)
+	floor_layer.modulate = Palette.get_color(new_hue)
 
+## This shit is really confusing, I apologize to my future self for this. Also next time I seriously
+## should just design the layers to be better because this is awful
 func can_shift(new_hue: Palette.Hue) -> bool:
+	
 	if new_hue == level_hue:
 		return true
+	# Find current layer
+	var current_layer = null
+	for layer: Layer in color_layers:
+		if layer.hue == level_hue:
+			current_layer = layer
+			break
+	# For each player and crate check if there is a tile from the current
+	# color layer
+	if current_layer != null:
+		for moveable: Moveable in moveables:
+			if current_layer.get_cell_source_id(moveable.cell) != -1:
+				return false
 	
+	# Need to check if a player is in an invisible crate
+	# First find player
+	var player = null
+	for moveable: Moveable in moveables:
+		if moveable is not Crate:
+			player = moveable
+			break
+			
+	# Checks if a crate OR player is in the spot of an invisible crate
 	for moveable: Moveable in moveables:
 		if moveable is Crate and moveable.hue == level_hue:
-			continue
-		for layer: Layer in color_layers:
-			if layer.hue == level_hue:
-				if layer.get_cell_source_id(moveable.cell) != -1:
+			if moveable.cell == player.cell:
+				return false
+			for different_moveable: Moveable in moveables:
+				if different_moveable.cell == moveable.cell and different_moveable != moveable:
 					return false
 	return true
 
