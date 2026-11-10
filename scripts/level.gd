@@ -13,6 +13,7 @@ const SPOT_ID = 2
 const PLAYER_ID = 3
 
 var level_hue: Palette.Hue = Palette.Hue.WHITE
+var player: Player
 var base_layer: TileMapLayer
 var floor_layer: TileMapLayer
 var color_layers: Array[Node]
@@ -109,14 +110,6 @@ func can_shift(new_hue: Palette.Hue) -> bool:
 			if current_layer.get_cell_source_id(moveable.cell) != -1:
 				return false
 	
-	# Need to check if a player is in an invisible crate
-	# First find player
-	var player = null
-	for moveable: Moveable in moveables:
-		if moveable is not Crate:
-			player = moveable
-			break
-			
 	# Checks if a crate OR player is in the spot of an invisible crate
 	for moveable: Moveable in moveables:
 		if moveable is Crate and moveable.hue == level_hue:

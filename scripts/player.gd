@@ -8,6 +8,10 @@ var inputs = {
 	"down": Vector2i.DOWN
 	}
 
+func _ready() -> void:
+	super()
+	Level.player = self
+
 func _unhandled_input(event: InputEvent) -> void:
 	if moving:
 		return

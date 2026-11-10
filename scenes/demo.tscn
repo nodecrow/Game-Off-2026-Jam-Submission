@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://nnqjdp2sxjyu" path="res://scenes/layers/green_layer.tscn" id="3_b0nem"]
 [ext_resource type="PackedScene" uid="uid://coahc61ni20iu" path="res://scenes/layers/red_layer.tscn" id="4_x0xbu"]
 [ext_resource type="PackedScene" uid="uid://cl447tcht5s3w" path="res://scenes/layers/yellow_layer.tscn" id="5_7qr1p"]
+[ext_resource type="PackedScene" uid="uid://di0roy2mx5gon" path="res://UI/radial_menu_button.tscn" id="7_7qr1p"]
 
 [node name="Demo" type="Node2D" unique_id=1764137368]
 
@@ -32,3 +33,7 @@ tile_map_data = PackedByteArray("AAAQAAwAAAADAAAAAAAQAA0AAAADAAIAAAA=")
 [node name="YellowLayer" parent="." unique_id=235360244 instance=ExtResource("5_7qr1p")]
 position = Vector2(-160, -96)
 tile_map_data = PackedByteArray("AAAQAA4AAAADAAAAAAAQAA8AAAADAAIAAAA=")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=155536325]
+
+[node name="RadialMenuButton" parent="CanvasLayer" unique_id=889342618 instance=ExtResource("7_7qr1p")]

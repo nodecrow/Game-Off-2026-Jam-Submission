@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://di0roy2mx5gon"]
+
+[ext_resource type="Script" uid="uid://bpdyuigw5gek6" path="res://radial_menu_button.gd" id="1_wf35d"]
+[ext_resource type="Texture2D" uid="uid://cglyipsaqsscj" path="res://assets/white.png" id="2_kqlh8"]
+[ext_resource type="Texture2D" uid="uid://d0dbjrpw78njp" path="res://assets/red.png" id="3_12b6e"]
+[ext_resource type="Script" uid="uid://brk4u7engwk0" path="res://scripts/color_slice.gd" id="3_ir67i"]
+[ext_resource type="Texture2D" uid="uid://e7aphubcjwfy" path="res://assets/blue.png" id="4_ir67i"]
+[ext_resource type="Texture2D" uid="uid://dhwcdl868gd2u" path="res://assets/yellow.png" id="5_epjj3"]
+[ext_resource type="Texture2D" uid="uid://dkamqkjrngquj" path="res://assets/green.png" id="6_kpga7"]
+
+[node name="RadialMenuButton" type="Control" unique_id=889342618]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wf35d")
+
+[node name="Buttons" type="Control" parent="." unique_id=1050318176]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 32.0
+offset_bottom = 32.0
+mouse_filter = 2
+
+[node name="White" type="TextureRect" parent="Buttons" unique_id=327111796]
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("2_kqlh8")
+script = ExtResource("3_ir67i")
+hue = 4
+
+[node name="Red" type="TextureRect" parent="Buttons" unique_id=428185619]
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("3_12b6e")
+script = ExtResource("3_ir67i")
+
+[node name="Blue" type="TextureRect" parent="Buttons" unique_id=34784305]
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("4_ir67i")
+script = ExtResource("3_ir67i")
+hue = 2
+
+[node name="Yellow" type="TextureRect" parent="Buttons" unique_id=2140938835]
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("5_epjj3")
+script = ExtResource("3_ir67i")
+hue = 3
+
+[node name="Green" type="TextureRect" parent="Buttons" unique_id=738713132]
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("6_kpga7")
+script = ExtResource("3_ir67i")
+hue = 1
