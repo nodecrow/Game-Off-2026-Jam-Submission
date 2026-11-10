@@ -33,6 +33,8 @@ func can_move(direction: Vector2i) -> bool:
 func move(direction: Vector2i) -> void:
 	var moveable: Moveable = Level.get_moveable_at_tile(cell + direction)
 	if moveable:
+		if moveable is Crate:
+			moveable.push_sound()
 		moveable.move(direction)
 	slide(direction)
 	Level.add_move_to_turn(self, direction)

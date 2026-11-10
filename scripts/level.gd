@@ -78,6 +78,9 @@ func shift_color(new_hue: Palette.Hue) -> void:
 	apply_hue(new_hue)
 
 func apply_hue(new_hue: Palette.Hue) -> void:
+	if new_hue == level_hue:
+		return
+	await player.paint_animation()
 	level_hue = new_hue
 	for layer: Layer in color_layers:
 		layer.on_level_hue_changed(level_hue)
@@ -88,8 +91,10 @@ func apply_hue(new_hue: Palette.Hue) -> void:
 	for moveable: Moveable in moveables:
 		if moveable is Crate:
 			moveable.on_level_hue_changed(level_hue)
-	
-	floor_layer.modulate = Palette.get_color(new_hue)
+			
+	var tween := create_tween()
+	tween.tween_property(floor_layer, "modulate", Palette.get_color(new_hue), 0.2)
+	#floor_layer.modulate = Palette.get_color(new_hue)
 
 ## This shit is really confusing, I apologize to my future self for this. Also next time I seriously
 ## should just design the layers to be better because this is awful

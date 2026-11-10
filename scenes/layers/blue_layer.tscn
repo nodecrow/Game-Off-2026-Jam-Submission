@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ci0rhatrplouc"]
 
-[ext_resource type="TileSet" uid="uid://bhkcc55g7eyp1" path="res://assets/wall_tile_set.tres" id="1_mp3bk"]
+[ext_resource type="TileSet" uid="uid://bhkcc55g7eyp1" path="res://assets/sprites/wall_tile_set.tres" id="1_mp3bk"]
 [ext_resource type="Script" uid="uid://cvn1sgrdaumt1" path="res://scripts/layer.gd" id="2_n8lwn"]
 
 [node name="BlueLayer" type="TileMapLayer" unique_id=296362565 groups=["ColorLayers"]]

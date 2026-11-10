@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://nnqjdp2sxjyu"]
 
-[ext_resource type="TileSet" uid="uid://bhkcc55g7eyp1" path="res://assets/wall_tile_set.tres" id="1_woy8a"]
+[ext_resource type="TileSet" uid="uid://bhkcc55g7eyp1" path="res://assets/sprites/wall_tile_set.tres" id="1_woy8a"]
 [ext_resource type="Script" uid="uid://cvn1sgrdaumt1" path="res://scripts/layer.gd" id="2_vt68e"]
 
 [node name="GreenLayer" type="TileMapLayer" unique_id=296362565 groups=["ColorLayers"]]

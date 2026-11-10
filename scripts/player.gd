@@ -1,12 +1,17 @@
 extends Moveable
 class_name Player
 
+
 var inputs = {
 	"right": Vector2i.RIGHT,
 	"left": Vector2i.LEFT,
 	"up": Vector2i.UP,
 	"down": Vector2i.DOWN
 	}
+
+@onready var player_sprite: Sprite2D = %Sprite2D
+@onready var movement_sound: AudioStreamPlayer2D = %MovementSound
+@onready var animation: AnimationPlayer = %AnimationPlayer
 
 func _ready() -> void:
 	super()
@@ -18,19 +23,22 @@ func _unhandled_input(event: InputEvent) -> void:
 	for direction in inputs.keys():
 		if event.is_action_pressed(direction):
 			if can_move(inputs[direction]):
-				Level.past_turns.append([])
+				Level.past_turns.append([]) # Add turn to history
+				move_animation()
 				move(inputs[direction])
 				if Level.is_all_spots_covered() and Level.level_hue == Palette.Hue.WHITE:
 					Level.game_over()
 	
 	if event.is_action_pressed("undo", true):
 		Level.undo_last_move()
-	
-	if event.is_action_pressed("blue"):
-		Level.shift_color(Palette.Hue.BLUE)
-	if event.is_action_pressed("red"):
-		Level.shift_color(Palette.Hue.RED)
-	if event.is_action_pressed("yellow"):
-		Level.shift_color(Palette.Hue.YELLOW)
-	if event.is_action_pressed("green"):
-		Level.shift_color(Palette.Hue.GREEN)
+
+func move_animation() -> void:
+	var tween: Tween = create_tween()
+	tween.tween_property(player_sprite, "scale", Vector2(0.75, 1.25), 0.05)
+	tween.tween_property(player_sprite, "scale", Vector2(1.25, 0.75), 0.05)
+	tween.tween_property(player_sprite, "scale", Vector2(1.0, 1.0), 0.05)
+	movement_sound.play()
+
+func paint_animation() -> void:
+	animation.play("paint")
+	await animation.animation_finished

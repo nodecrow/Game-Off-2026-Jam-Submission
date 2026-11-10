@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://be1jnjid7un13"]
 
-[ext_resource type="Texture2D" uid="uid://dlcj85yad3d6w" path="res://assets/Spot.png" id="1_82nir"]
+[ext_resource type="Texture2D" uid="uid://dlcj85yad3d6w" path="res://assets/sprites/Spot.png" id="1_82nir"]
 [ext_resource type="Script" uid="uid://ga71jq0ej0qe" path="res://scripts/spot.gd" id="1_eyi0y"]
 
 [node name="Spot" type="Node2D" unique_id=1462729845]

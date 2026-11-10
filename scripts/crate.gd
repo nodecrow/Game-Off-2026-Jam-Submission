@@ -4,6 +4,8 @@ class_name Crate
 @export var hue: Palette.Hue
 
 @onready var crate_sprite: Sprite2D = %Sprite2D
+@onready var audio: AudioStreamPlayer2D = %AudioStreamPlayer2D
+
 
 func _ready() -> void:
 	super()
@@ -17,3 +19,6 @@ func on_level_hue_changed(layer_hue: Palette.Hue) -> void:
 		self.visible = false
 	else:
 		self.visible = true
+
+func push_sound() -> void:
+	audio.play()

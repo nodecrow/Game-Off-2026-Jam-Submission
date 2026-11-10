@@ -3,4 +3,5 @@
 [ext_resource type="PackedScene" uid="uid://dq7olq4s2o1je" path="res://scenes/crates/crate.tscn" id="1_dnrsp"]
 
 [node name="Crate" unique_id=2039027893 instance=ExtResource("1_dnrsp")]
+z_index = 1
 hue = 1

@@ -1,11 +1,83 @@
 [gd_scene format=3 uid="uid://2gpxnr58yee"]
 
 [ext_resource type="Script" uid="uid://kveihcijpkim" path="res://scripts/player.gd" id="1_g2els"]
-[ext_resource type="Texture2D" uid="uid://bm3s1uug7yhyw" path="res://assets/player.png" id="2_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://dj7kqd0atgwst" path="res://assets/sprites/paint_animation.png" id="2_qhqgy"]
+[ext_resource type="AudioStream" uid="uid://cgl0vmlwh65fr" path="res://assets/sounds/elastic_twang.wav" id="3_qhqgy"]
+[ext_resource type="AudioStream" uid="uid://rybkfdfbbbfo" path="res://assets/sounds/universfield-cartoon-splat-310479.mp3" id="4_dqkch"]
+
+[sub_resource type="Animation" id="Animation_qhqgy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_dqkch"]
+resource_name = "paint"
+length = 0.8333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.23333333, 0.3, 0.36666667, 0.43333334, 0.5, 0.6, 0.6666667, 0.76666665),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0), Vector2i(4, 0), Vector2i(5, 0), Vector2i(6, 0), Vector2i(4, 0), Vector2i(3, 0), Vector2i(2, 0), Vector2i(1, 0)]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PaintSound")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_dqkch")
+}],
+"times": PackedFloat32Array(0.4)
+}
+tracks/1/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qlg0r"]
+_data = {
+&"RESET": SubResource("Animation_qhqgy"),
+&"paint": SubResource("Animation_dqkch")
+}
 
 [node name="Player" type="Node2D" unique_id=558362374]
 script = ExtResource("1_g2els")
 metadata/_custom_type_script = "uid://dow4v8lya17na"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=252720749]
+unique_name_in_owner = true
 texture = ExtResource("2_qhqgy")
+hframes = 7
+frame = 1
+
+[node name="MovementSound" type="AudioStreamPlayer2D" parent="." unique_id=1768008865]
+unique_name_in_owner = true
+stream = ExtResource("3_qhqgy")
+volume_db = -12.6
+pitch_scale = 1.25
+
+[node name="PaintSound" type="AudioStreamPlayer2D" parent="." unique_id=830089312]
+unique_name_in_owner = true
+volume_db = -11.882
+pitch_scale = 0.62
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1772833480]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_qlg0r")
