@@ -12,7 +12,7 @@ func _ready() -> void:
 	set_color(Palette.get_color(hue))
 
 func set_color(color: Color) -> void:
-	crate_sprite.modulate = color
+	crate_sprite.self_modulate = color
 
 func on_level_hue_changed(layer_hue: Palette.Hue) -> void:
 	if hue == layer_hue:

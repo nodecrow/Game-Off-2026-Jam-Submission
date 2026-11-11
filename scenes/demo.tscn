@@ -2,37 +2,78 @@
 
 [ext_resource type="PackedScene" uid="uid://cjhtvhxxhjcxk" path="res://scenes/layers/base_layer.tscn" id="1_ba4lm"]
 [ext_resource type="PackedScene" uid="uid://c6685qc5ta6ci" path="res://scenes/layers/floor_layer.tscn" id="1_x0xbu"]
+[ext_resource type="Texture2D" uid="uid://otnwxmfroatb" path="res://assets/sprites/floor.png" id="2_e66cg"]
 [ext_resource type="PackedScene" uid="uid://ci0rhatrplouc" path="res://scenes/layers/blue_layer.tscn" id="2_l20p6"]
 [ext_resource type="PackedScene" uid="uid://nnqjdp2sxjyu" path="res://scenes/layers/green_layer.tscn" id="3_b0nem"]
 [ext_resource type="PackedScene" uid="uid://coahc61ni20iu" path="res://scenes/layers/red_layer.tscn" id="4_x0xbu"]
 [ext_resource type="PackedScene" uid="uid://cl447tcht5s3w" path="res://scenes/layers/yellow_layer.tscn" id="5_7qr1p"]
 [ext_resource type="PackedScene" uid="uid://di0roy2mx5gon" path="res://UI/radial_menu_button.tscn" id="7_7qr1p"]
+[ext_resource type="Shader" uid="uid://drac4533au3i1" path="res://scenes/scroll.gdshader" id="9_h5dly"]
+[ext_resource type="Texture2D" uid="uid://bbu6cenq8p0jh" path="res://assets/sprites/backgrounds/texture200.png" id="10_h5dly"]
 
-[node name="Demo" type="Node2D" unique_id=1764137368]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5fme1"]
+texture = ExtResource("2_e66cg")
+0:0/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_7qr1p"]
+sources/0 = SubResource("TileSetAtlasSource_5fme1")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5fme1"]
+shader = ExtResource("9_h5dly")
+
+[node name="Level1" type="Node2D" unique_id=1764137368]
 position = Vector2(-8, 8)
 
-[node name="FloorLayer" parent="." unique_id=379000185 instance=ExtResource("1_x0xbu")]
-position = Vector2(-160, -96)
-tile_map_data = PackedByteArray("AAATAAkAAAAAAAAAAAARAAkAAAAAAAAAAAASAAkAAAAAAAAAAAAUAAkAAAAAAAAAAAAVAAkAAAAAAAAAAAAWAAkAAAAAAAAAAAAXAAkAAAAAAAAAAAAXAAoAAAAAAAAAAAAXAAsAAAAAAAAAAAAXAAwAAAAAAAAAAAAWAAwAAAAAAAAAAAAVAAwAAAAAAAAAAAAUAAwAAAAAAAAAAAATAAwAAAAAAAAAAAASAAwAAAAAAAAAAAASAAsAAAAAAAAAAAARAAoAAAAAAAAAAAARAAsAAAAAAAAAAAASAAoAAAAAAAAAAAATAAoAAAAAAAAAAAAUAAoAAAAAAAAAAAAVAAoAAAAAAAAAAAAWAAoAAAAAAAAAAAAWAAsAAAAAAAAAAAAVAAsAAAAAAAAAAAAUAAsAAAAAAAAAAAATAAsAAAAAAAAAAAARAAwAAAAAAAAAAAA=")
+[node name="Radial" type="CanvasLayer" parent="." unique_id=155536325]
 
-[node name="BaseLayer" parent="." unique_id=1574229446 instance=ExtResource("1_ba4lm")]
-position = Vector2(-160, -96)
-tile_map_data = PackedByteArray("AAAPAAcAAAAAAAAAAAAQAAcAAAABAAAAAAARAAcAAAABAAAAAAASAAcAAAABAAAAAAATAAcAAAABAAAAAAAUAAcAAAABAAAAAAAVAAcAAAABAAAAAAAWAAcAAAABAAAAAAAXAAcAAAABAAAAAAAYAAcAAAABAAAAAAAPAAgAAAAAAAEAAAAPAAkAAAAAAAEAAAAPAAoAAAAAAAEAAAAPAAsAAAAAAAEAAAAPAAwAAAAAAAEAAAAPAA0AAAAAAAEAAAAPAA4AAAAAAAIAAAAQAA4AAAABAAIAAAARAA4AAAABAAIAAAASAA4AAAABAAIAAAATAA4AAAABAAIAAAAUAA4AAAABAAIAAAAVAA4AAAABAAIAAAAWAA4AAAABAAIAAAAXAA4AAAABAAIAAAAYAA4AAAABAAIAAAAZAA4AAAACAAIAAAAZAA0AAAACAAEAAAAZAAwAAAACAAEAAAAZAAsAAAACAAEAAAAZAAoAAAACAAEAAAAZAAkAAAACAAEAAAAZAAgAAAACAAEAAAAQAAgAAAAEAAAAAAAQAAkAAAACAAEAAAAQAAoAAAACAAEAAAAQAAsAAAACAAEAAAAQAAwAAAACAAEAAAAQAA0AAAAEAAEAAAAYAAgAAAAFAAAAAAAYAAkAAAAAAAEAAAAYAAoAAAAAAAEAAAAYAA0AAAAFAAEAAAAYAAsAAAAAAAEAAAAYAAwAAAAAAAEAAAARAA0AAAABAAAAAAASAA0AAAABAAAAAAATAA0AAAABAAAAAAAUAA0AAAABAAAAAAAVAA0AAAABAAAAAAAWAA0AAAABAAAAAAAXAA0AAAABAAAAAAARAAgAAAABAAIAAAASAAgAAAABAAIAAAATAAgAAAABAAIAAAAUAAgAAAABAAIAAAAVAAgAAAABAAIAAAAWAAgAAAABAAIAAAAXAAgAAAABAAIAAAAZAAcAAAACAAAAAAAVAAoAAwAAAAAAAQA=")
-
-[node name="BlueLayer" parent="." unique_id=296362565 instance=ExtResource("2_l20p6")]
-position = Vector2(-160, -96)
-tile_map_data = PackedByteArray("AAAUAAoAAQAAAAAAAQASAAoAAgAAAAAAAgA=")
-
-[node name="GreenLayer" parent="." unique_id=1949641554 instance=ExtResource("3_b0nem")]
-position = Vector2(-160, -96)
-
-[node name="RedLayer" parent="." unique_id=365445802 instance=ExtResource("4_x0xbu")]
-position = Vector2(-160, -96)
-
-[node name="YellowLayer" parent="." unique_id=235360244 instance=ExtResource("5_7qr1p")]
-position = Vector2(-160, -96)
-
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=155536325]
-
-[node name="RadialMenuButton" parent="CanvasLayer" unique_id=889342618 instance=ExtResource("7_7qr1p")]
+[node name="RadialMenuButton" parent="Radial" unique_id=889342618 instance=ExtResource("7_7qr1p")]
 metadata/_edit_lock_ = true
+
+[node name="Layers" type="Node2D" parent="." unique_id=1702183193]
+position = Vector2(-20, 9)
+
+[node name="FloorLayer" parent="Layers" unique_id=379000185 instance=ExtResource("1_x0xbu")]
+position = Vector2(-160, -96)
+tile_map_data = PackedByteArray("AAARAAkAAAAAAAAAAAASAAkAAAAAAAAAAAATAAkAAAAAAAAAAAAUAAkAAAAAAAAAAAAUAAgAAAAAAAAAAAAUAAcAAAAAAAAAAAAVAAcAAAAAAAAAAAAWAAcAAAAAAAAAAAAWAAgAAAAAAAAAAAAWAAkAAAAAAAAAAAAVAAkAAAAAAAAAAAAVAAgAAAAAAAAAAAAXAAkAAAAAAAAAAAAYAAkAAAAAAAAAAAAZAAkAAAAAAAAAAAAZAAoAAAAAAAAAAAAZAAsAAAAAAAAAAAAYAAsAAAAAAAAAAAAXAAsAAAAAAAAAAAAWAAsAAAAAAAAAAAAWAAwAAAAAAAAAAAAWAA0AAAAAAAAAAAAVAA0AAAAAAAAAAAAUAA0AAAAAAAAAAAAVAAwAAAAAAAAAAAAVAAsAAAAAAAAAAAAUAAsAAAAAAAAAAAAUAAwAAAAAAAAAAAATAAsAAAAAAAAAAAASAAsAAAAAAAAAAAARAAsAAAAAAAAAAAARAAoAAAAAAAAAAAASAAoAAAAAAAAAAAATAAoAAAAAAAAAAAAUAAoAAAAAAAAAAAAVAAoAAAAAAAAAAAAWAAoAAAAAAAAAAAAXAAoAAAAAAAAAAAAYAAoAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_7qr1p")
+
+[node name="BaseLayer" parent="Layers" unique_id=1574229446 instance=ExtResource("1_ba4lm")]
+z_index = 1
+position = Vector2(-160, -96)
+tile_map_data = PackedByteArray("AAAaAAgAAAAHAAAAAAAaAAkAAAADAAEAAAAaAAoAAAADAAEAAAAaAAsAAAADAAEAAAAaAAwAAAAHAAEAAAAZAAwAAAABAAMAAAAYAAwAAAABAAMAAAAXAAwAAAAGAAAAAAATAAwAAAAHAAAAAAASAAwAAAABAAMAAAARAAwAAAABAAMAAAAQAAwAAAAGAAEAAAAQAAgAAAAGAAAAAAARAAgAAAABAAMAAAASAAgAAAABAAMAAAATAAgAAAAHAAEAAAAXAAgAAAAGAAEAAAAYAAgAAAABAAMAAAAZAAgAAAABAAMAAAAYAAoAAwAAAAAAAQAQAAkAAAADAAEAAAAQAAoAAAADAAEAAAAQAAsAAAADAAEAAAATAAcAAAADAAEAAAATAAYAAAAGAAAAAAAUAAYAAAABAAMAAAAVAAYAAAABAAMAAAAWAAYAAAABAAMAAAAXAAYAAAAHAAAAAAAXAAcAAAADAAEAAAATAA0AAAADAAEAAAATAA4AAAAGAAEAAAAUAA4AAAABAAMAAAAVAA4AAAABAAMAAAAWAA4AAAABAAMAAAAXAA4AAAAHAAEAAAAXAA0AAAADAAEAAAA=")
+
+[node name="BlueLayer" parent="Layers" unique_id=296362565 instance=ExtResource("2_l20p6")]
+position = Vector2(-160, -96)
+tile_map_data = PackedByteArray("AAATAAkAAAADAAAAAAATAAoAAAADAAEAAAATAAsAAAADAAIAAAAVAAgAAQAAAAAAAQAVAAcAAgAAAAAAAgA=")
+
+[node name="GreenLayer" parent="Layers" unique_id=1949641554 instance=ExtResource("3_b0nem")]
+position = Vector2(-160, -96)
+
+[node name="RedLayer" parent="Layers" unique_id=365445802 instance=ExtResource("4_x0xbu")]
+position = Vector2(-160, -96)
+tile_map_data = PackedByteArray("AAAVAAwAAQAAAAAAAwAVAA0AAgAAAAAABAA=")
+
+[node name="YellowLayer" parent="Layers" unique_id=235360244 instance=ExtResource("5_7qr1p")]
+position = Vector2(-160, -96)
+
+[node name="Background" type="CanvasLayer" parent="." unique_id=1755973903]
+layer = -2
+
+[node name="ColorRect" type="ColorRect" parent="Background" unique_id=1419009234]
+offset_right = 320.0
+offset_bottom = 180.0
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Background" unique_id=960578035]
+modulate = Color(0.017888177, 0.017888173, 0.016221547, 1)
+texture_filter = 5
+texture_repeat = 2
+material = SubResource("ShaderMaterial_5fme1")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_h5dly")
+stretch_mode = 1

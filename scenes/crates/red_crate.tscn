@@ -4,3 +4,4 @@
 
 [node name="Crate" unique_id=2039027893 instance=ExtResource("1_nuoau")]
 z_index = 1
+hue = 0
