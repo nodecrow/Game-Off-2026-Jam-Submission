@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bpdyuigw5gek6" path="res://UI/radial_menu_button.gd" id="1_wf35d"]
 [ext_resource type="Texture2D" uid="uid://cglyipsaqsscj" path="res://assets/sprites/white.png" id="2_kqlh8"]
 [ext_resource type="Texture2D" uid="uid://d0dbjrpw78njp" path="res://assets/sprites/red.png" id="3_12b6e"]
-[ext_resource type="Script" uid="uid://brk4u7engwk0" path="res://scripts/color_slice.gd" id="3_ir67i"]
+[ext_resource type="Script" uid="uid://brk4u7engwk0" path="res://UI/color_slice.gd" id="3_ir67i"]
 [ext_resource type="Texture2D" uid="uid://e7aphubcjwfy" path="res://assets/sprites/blue.png" id="4_ir67i"]
 [ext_resource type="Texture2D" uid="uid://dhwcdl868gd2u" path="res://assets/sprites/yellow.png" id="5_epjj3"]
 [ext_resource type="Texture2D" uid="uid://dkamqkjrngquj" path="res://assets/sprites/green.png" id="6_kpga7"]
@@ -30,6 +30,7 @@ mouse_filter = 2
 layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
+pivot_offset = Vector2(8, 8)
 texture = ExtResource("2_kqlh8")
 script = ExtResource("3_ir67i")
 hue = 4
@@ -38,6 +39,7 @@ hue = 4
 layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
+pivot_offset = Vector2(8, 8)
 texture = ExtResource("3_12b6e")
 script = ExtResource("3_ir67i")
 
@@ -45,6 +47,7 @@ script = ExtResource("3_ir67i")
 layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
+pivot_offset = Vector2(8, 8)
 texture = ExtResource("4_ir67i")
 script = ExtResource("3_ir67i")
 hue = 2
@@ -53,6 +56,7 @@ hue = 2
 layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
+pivot_offset = Vector2(8, 8)
 texture = ExtResource("5_epjj3")
 script = ExtResource("3_ir67i")
 hue = 3
@@ -61,6 +65,11 @@ hue = 3
 layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
+pivot_offset = Vector2(8, 8)
 texture = ExtResource("6_kpga7")
 script = ExtResource("3_ir67i")
 hue = 1
+
+[node name="UI FX" type="AudioStreamPlayer2D" parent="." unique_id=461706748]
+unique_name_in_owner = true
+volume_db = -5.6

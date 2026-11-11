@@ -55,6 +55,10 @@ func undo_last_move() -> void:
 		for move in last_moves:
 			if move is Move:
 				move.node.slide(-move.direction)
+				if move.node is Player:
+					player.move_animation()
+				if move.node is Crate:
+					move.node.push_sound()
 			if move is ColorShift:
 				apply_hue(move.old_hue)
 
@@ -80,8 +84,8 @@ func shift_color(new_hue: Palette.Hue) -> void:
 func apply_hue(new_hue: Palette.Hue) -> void:
 	if new_hue == level_hue:
 		return
-	await player.paint_animation()
 	level_hue = new_hue
+	await player.paint_animation()
 	for layer: Layer in color_layers:
 		layer.on_level_hue_changed(level_hue)
 		
@@ -94,7 +98,6 @@ func apply_hue(new_hue: Palette.Hue) -> void:
 			
 	var tween := create_tween()
 	tween.tween_property(floor_layer, "modulate", Palette.get_color(new_hue), 0.2)
-	#floor_layer.modulate = Palette.get_color(new_hue)
 
 ## This shit is really confusing, I apologize to my future self for this. Also next time I seriously
 ## should just design the layers to be better because this is awful

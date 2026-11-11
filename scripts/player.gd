@@ -26,7 +26,7 @@ func _unhandled_input(event: InputEvent) -> void:
 				Level.past_turns.append([]) # Add turn to history
 				move_animation()
 				move(inputs[direction])
-				if Level.is_all_spots_covered() and Level.level_hue == Palette.Hue.WHITE:
+				if Level.is_all_spots_covered():
 					Level.game_over()
 	
 	if event.is_action_pressed("undo", true):
