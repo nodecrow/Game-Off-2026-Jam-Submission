@@ -97,7 +97,7 @@ func apply_hue(new_hue: Palette.Hue) -> void:
 			moveable.on_level_hue_changed(level_hue)
 			
 	var tween := create_tween()
-	tween.tween_property(floor_layer, "modulate", Palette.get_color(new_hue), 0.2)
+	tween.tween_property(floor_layer, "modulate", Palette.get_color(new_hue), 0.15)
 
 ## This shit is really confusing, I apologize to my future self for this. Also next time I seriously
 ## should just design the layers to be better because this is awful
