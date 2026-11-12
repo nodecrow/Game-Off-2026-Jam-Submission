@@ -30,6 +30,7 @@ func level_changed() -> void:
 	base_layer = get_tree().get_first_node_in_group("LevelTileMap")
 	color_layers = get_tree().get_nodes_in_group("ColorLayers")
 	past_turns.clear()
+	level_hue = Palette.Hue.WHITE
 
 func is_tile_wall(tile: Vector2i) -> bool:
 	for layer: TileMapLayer in color_layers:

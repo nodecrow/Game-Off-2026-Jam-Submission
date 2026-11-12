@@ -1,0 +1,149 @@
+[gd_scene format=3 uid="uid://bdwbwvx5e3mct"]
+
+[ext_resource type="FontFile" uid="uid://cokrdxwon2j1f" path="res://assets/sprites/yoster.ttf" id="1_v44wn"]
+[ext_resource type="Script" uid="uid://c6pmsbf1mwp18" path="res://UI/intro/node_crow_intro.gd" id="1_y2jpu"]
+[ext_resource type="Texture2D" uid="uid://c2aypx3ctlycj" path="res://assets/sprites/CrowNodeLogo.png" id="2_y2jpu"]
+[ext_resource type="Texture2D" uid="uid://dhc85vti6f7t3" path="res://assets/sprites/Godot Logo.png" id="3_6huvt"]
+
+[node name="Intro" type="Control" unique_id=1428547377]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_y2jpu")
+
+[node name="Background" type="ColorRect" parent="." unique_id=93664533]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Nodecrow" type="Control" parent="." unique_id=645925115]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TopText" type="RichTextLabel" parent="Nodecrow" unique_id=356258377]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 122.0
+offset_top = 15.0
+offset_right = 83.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("1_v44wn")
+theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
+text = "A game by"
+
+[node name="BottomText" type="RichTextLabel" parent="Nodecrow" unique_id=433748420]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 94.0
+offset_top = 140.0
+offset_right = 55.0
+offset_bottom = 100.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("1_v44wn")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[wave freq=2.0]Nodecrow"
+
+[node name="NodecrowLogo" type="Sprite2D" parent="Nodecrow" unique_id=1519734132]
+position = Vector2(152, 86)
+scale = Vector2(1.6152344, 1.6152344)
+texture = ExtResource("2_y2jpu")
+
+[node name="Godot" type="Control" parent="." unique_id=951556161]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TopText2" type="RichTextLabel" parent="Godot" unique_id=1867205873]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 131.0
+offset_top = 24.0
+offset_right = 92.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("1_v44wn")
+theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
+text = "Made in"
+
+[node name="BottomText2" type="RichTextLabel" parent="Godot" unique_id=1341469854]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 117.0
+offset_top = 121.0
+offset_right = -116.0
+offset_bottom = -31.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("1_v44wn")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "Godot"
+
+[node name="BottomText3" type="RichTextLabel" parent="Godot" unique_id=50878704]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 117.0
+offset_top = 148.0
+offset_right = -116.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("1_v44wn")
+theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
+text = "Game Engine"
+
+[node name="Godot" type="Sprite2D" parent="Godot" unique_id=1506593750]
+position = Vector2(153, 82)
+scale = Vector2(0.089531235, 0.090781264)
+texture = ExtResource("3_6huvt")
+
+[node name="BlackScreen" type="ColorRect" parent="." unique_id=890398971]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.5258789e-05
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
