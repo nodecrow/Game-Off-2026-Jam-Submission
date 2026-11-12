@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://nnqjdp2sxjyu" path="res://scenes/layers/green_layer.tscn" id="3_b0nem"]
 [ext_resource type="PackedScene" uid="uid://coahc61ni20iu" path="res://scenes/layers/red_layer.tscn" id="4_x0xbu"]
 [ext_resource type="PackedScene" uid="uid://cl447tcht5s3w" path="res://scenes/layers/yellow_layer.tscn" id="5_7qr1p"]
-[ext_resource type="PackedScene" uid="uid://di0roy2mx5gon" path="res://UI/radial_menu_button.tscn" id="7_7qr1p"]
+[ext_resource type="PackedScene" uid="uid://di0roy2mx5gon" path="res://UI/scenes/radial_menu_button.tscn" id="7_7qr1p"]
 [ext_resource type="Shader" uid="uid://drac4533au3i1" path="res://scenes/scroll.gdshader" id="9_h5dly"]
 [ext_resource type="Texture2D" uid="uid://bbu6cenq8p0jh" path="res://assets/sprites/backgrounds/texture200.png" id="10_h5dly"]
 

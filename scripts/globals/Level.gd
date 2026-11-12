@@ -130,4 +130,5 @@ func can_shift(new_hue: Palette.Hue) -> bool:
 	return true
 
 func game_over() -> void:
+	GameManager.complete_level()
 	print("WIN")

@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://bdwbwvx5e3mct"]
 
-[ext_resource type="FontFile" uid="uid://cokrdxwon2j1f" path="res://assets/sprites/yoster.ttf" id="1_v44wn"]
-[ext_resource type="Script" uid="uid://c6pmsbf1mwp18" path="res://UI/intro/node_crow_intro.gd" id="1_y2jpu"]
-[ext_resource type="Texture2D" uid="uid://c2aypx3ctlycj" path="res://assets/sprites/CrowNodeLogo.png" id="2_y2jpu"]
-[ext_resource type="Texture2D" uid="uid://dhc85vti6f7t3" path="res://assets/sprites/Godot Logo.png" id="3_6huvt"]
+[ext_resource type="Script" uid="uid://c6pmsbf1mwp18" path="res://UI/scripts/node_crow_intro.gd" id="1_siaxe"]
+[ext_resource type="FontFile" uid="uid://cokrdxwon2j1f" path="res://assets/yoster.ttf" id="2_21wfr"]
+[ext_resource type="Texture2D" uid="uid://c2aypx3ctlycj" path="res://assets/CrowNodeLogo.png" id="3_1sbax"]
+[ext_resource type="Texture2D" uid="uid://dhc85vti6f7t3" path="res://assets/Godot Logo.png" id="4_8vr7f"]
 
 [node name="Intro" type="Control" unique_id=1428547377]
 layout_mode = 3
@@ -14,7 +14,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource("1_y2jpu")
+script = ExtResource("1_siaxe")
 
 [node name="Background" type="ColorRect" parent="." unique_id=93664533]
 layout_mode = 1
@@ -27,7 +27,6 @@ color = Color(0, 0, 0, 1)
 
 [node name="Nodecrow" type="Control" parent="." unique_id=645925115]
 unique_name_in_owner = true
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -47,7 +46,7 @@ offset_bottom = -25.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/default_color = Color(1, 1, 1, 1)
-theme_override_fonts/normal_font = ExtResource("1_v44wn")
+theme_override_fonts/normal_font = ExtResource("2_21wfr")
 theme_override_font_sizes/normal_font_size = 12
 bbcode_enabled = true
 text = "A game by"
@@ -61,8 +60,10 @@ offset_left = 94.0
 offset_top = 140.0
 offset_right = 55.0
 offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/default_color = Color(1, 1, 1, 1)
-theme_override_fonts/normal_font = ExtResource("1_v44wn")
+theme_override_fonts/normal_font = ExtResource("2_21wfr")
 theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
 text = "[wave freq=2.0]Nodecrow"
@@ -70,7 +71,7 @@ text = "[wave freq=2.0]Nodecrow"
 [node name="NodecrowLogo" type="Sprite2D" parent="Nodecrow" unique_id=1519734132]
 position = Vector2(152, 86)
 scale = Vector2(1.6152344, 1.6152344)
-texture = ExtResource("2_y2jpu")
+texture = ExtResource("3_1sbax")
 
 [node name="Godot" type="Control" parent="." unique_id=951556161]
 unique_name_in_owner = true
@@ -93,7 +94,7 @@ offset_bottom = -16.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/default_color = Color(1, 1, 1, 1)
-theme_override_fonts/normal_font = ExtResource("1_v44wn")
+theme_override_fonts/normal_font = ExtResource("2_21wfr")
 theme_override_font_sizes/normal_font_size = 12
 bbcode_enabled = true
 text = "Made in"
@@ -110,7 +111,7 @@ offset_bottom = -31.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/default_color = Color(1, 1, 1, 1)
-theme_override_fonts/normal_font = ExtResource("1_v44wn")
+theme_override_fonts/normal_font = ExtResource("2_21wfr")
 theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
 text = "Godot"
@@ -127,15 +128,15 @@ offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/default_color = Color(1, 1, 1, 1)
-theme_override_fonts/normal_font = ExtResource("1_v44wn")
+theme_override_fonts/normal_font = ExtResource("2_21wfr")
 theme_override_font_sizes/normal_font_size = 12
 bbcode_enabled = true
 text = "Game Engine"
 
 [node name="Godot" type="Sprite2D" parent="Godot" unique_id=1506593750]
-position = Vector2(153, 82)
+position = Vector2(156.00002, 78.99999)
 scale = Vector2(0.089531235, 0.090781264)
-texture = ExtResource("3_6huvt")
+texture = ExtResource("4_8vr7f")
 
 [node name="BlackScreen" type="ColorRect" parent="." unique_id=890398971]
 unique_name_in_owner = true
@@ -146,4 +147,5 @@ anchor_bottom = 1.0
 offset_left = -1.5258789e-05
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0, 0, 0, 1)

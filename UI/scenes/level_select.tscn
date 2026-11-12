@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://22ks2rd8fj0n"]
+
+[ext_resource type="Script" uid="uid://bcae4pawk51au" path="res://UI/scripts/level_select.gd" id="1_do81s"]
+[ext_resource type="PackedScene" uid="uid://d4ds4lnxo71cv" path="res://UI/scenes/level_select_button.tscn" id="2_ruqx4"]
+
+[node name="LevelSelect" type="Control" unique_id=1861225580]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_do81s")
+
+[node name="Label" type="Label" parent="." unique_id=1228975895]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.337
+anchor_right = 0.66200006
+anchor_bottom = 0.128
+offset_left = 32.159996
+offset_right = -31.840027
+offset_bottom = -0.040000916
+grow_horizontal = 2
+text = "LEVEL SELECT"
+metadata/_edit_use_anchors_ = true
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1536262493]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.12777779
+anchor_right = 1.0
+anchor_bottom = 1.0
+metadata/_edit_use_anchors_ = true
+
+[node name="GridContainer" type="GridContainer" parent="CenterContainer" unique_id=794870655]
+layout_mode = 2
+columns = 5
+
+[node name="LevelSelectButton" parent="CenterContainer/GridContainer" unique_id=837408579 instance=ExtResource("2_ruqx4")]
+layout_mode = 2
+
+[node name="LevelSelectButton2" parent="CenterContainer/GridContainer" unique_id=1502736032 instance=ExtResource("2_ruqx4")]
+layout_mode = 2
+
+[node name="LevelSelectButton3" parent="CenterContainer/GridContainer" unique_id=1229253668 instance=ExtResource("2_ruqx4")]
+layout_mode = 2
+
+[node name="LevelSelectButton4" parent="CenterContainer/GridContainer" unique_id=1202780746 instance=ExtResource("2_ruqx4")]
+layout_mode = 2
+
+[node name="LevelSelectButton5" parent="CenterContainer/GridContainer" unique_id=1211651411 instance=ExtResource("2_ruqx4")]
+layout_mode = 2
+
+[node name="LevelSelectButton6" parent="CenterContainer/GridContainer" unique_id=1617479872 instance=ExtResource("2_ruqx4")]
+layout_mode = 2
+
+[node name="LevelSelectButton7" parent="CenterContainer/GridContainer" unique_id=572007408 instance=ExtResource("2_ruqx4")]
+layout_mode = 2
+
+[node name="LevelSelectButton8" parent="CenterContainer/GridContainer" unique_id=577814788 instance=ExtResource("2_ruqx4")]
+layout_mode = 2
+
+[node name="LevelSelectButton9" parent="CenterContainer/GridContainer" unique_id=643602216 instance=ExtResource("2_ruqx4")]
+layout_mode = 2
+
+[node name="LevelSelectButton10" parent="CenterContainer/GridContainer" unique_id=1240393220 instance=ExtResource("2_ruqx4")]
+layout_mode = 2
