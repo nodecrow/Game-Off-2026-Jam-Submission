@@ -8,12 +8,16 @@ const SETTINGS = preload("uid://dh5vomjhe5gh3")
 const LEVEL_1 = preload("uid://cqd2hwt0rwxkk")
 const LEVEL_2 = preload("uid://ct57n2c3787mm")
 const LEVEL_3 = preload("uid://cko3uoq0ug5yn")
+const LEVEL_4 = preload("uid://crijlpstipcb6")
+const LEVEL_5 = preload("uid://b2mplkfwyr3yn")
 
 
 var levels: Array[PackedScene] = [
 	LEVEL_1,
 	LEVEL_2,
-	LEVEL_3
+	LEVEL_3,
+	LEVEL_4,
+	LEVEL_5
 ]
 
 var current_level: int = 0

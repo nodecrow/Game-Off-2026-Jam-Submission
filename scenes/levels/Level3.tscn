@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://coahc61ni20iu" path="res://scenes/layers/red_layer.tscn" id="6_cw4sw"]
 [ext_resource type="PackedScene" uid="uid://cl447tcht5s3w" path="res://scenes/layers/yellow_layer.tscn" id="7_vjdto"]
 [ext_resource type="Shader" uid="uid://drac4533au3i1" path="res://scenes/scroll.gdshader" id="8_bqc3i"]
-[ext_resource type="Texture2D" uid="uid://bbu6cenq8p0jh" path="res://assets/sprites/backgrounds/texture200.png" id="9_ljeji"]
+[ext_resource type="Texture2D" uid="uid://cbjeqc8hgpn6e" path="res://assets/sprites/backgrounds/texture121.png" id="9_h66bl"]
 [ext_resource type="PackedScene" uid="uid://di0roy2mx5gon" path="res://UI/scenes/radial_menu_button.tscn" id="10_8qlrg"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5fme1"]
@@ -26,17 +26,17 @@ position = Vector2(0, 12)
 tile_map_data = PackedByteArray("AAAKAAQAAAAAAAAAAAAJAAQAAAAAAAAAAAAJAAMAAAAAAAAAAAAKAAMAAAAAAAAAAAALAAMAAAAAAAAAAAALAAQAAAAAAAAAAAALAAUAAAAAAAAAAAAKAAUAAAAAAAAAAAAJAAUAAAAAAAAAAAAMAAMAAAAAAAAAAAAMAAQAAAAAAAAAAAAMAAUAAAAAAAAAAAAIAAMAAAAAAAAAAAAIAAQAAAAAAAAAAAAIAAUAAAAAAAAAAAANAAMAAAAAAAAAAAANAAQAAAAAAAAAAAANAAUAAAAAAAAAAAAHAAMAAAAAAAAAAAAHAAQAAAAAAAAAAAAHAAUAAAAAAAAAAAA=")
 
 [node name="BlueLayer" parent="Layers" unique_id=296362565 instance=ExtResource("4_i2tsv")]
-tile_map_data = PackedByteArray("AAAIAAMAAgAAAAAAAgAJAAQAAQAAAAAAAQA=")
+tile_map_data = PackedByteArray("AAAKAAQAAQAAAAAAAQALAAUAAgAAAAAAAgA=")
 
 [node name="GreenLayer" parent="Layers" unique_id=47209531 instance=ExtResource("5_4n27n")]
 
 [node name="RedLayer" parent="Layers" unique_id=1455758624 instance=ExtResource("6_cw4sw")]
-tile_map_data = PackedByteArray("AAAIAAQAAQAAAAAAAwAKAAQAAgAAAAAABAA=")
+tile_map_data = PackedByteArray("AAALAAQAAQAAAAAAAwAMAAQAAgAAAAAABAA=")
 
 [node name="YellowLayer" parent="Layers" unique_id=715764647 instance=ExtResource("7_vjdto")]
 
 [node name="BaseLayer" parent="Layers" unique_id=1574229446 instance=ExtResource("3_bs2pm")]
-tile_map_data = PackedByteArray("AAAMAAQAAwAAAAAAAQAGAAIAAAAGAAAAAAAGAAMAAAADAAEAAAAGAAQAAAADAAEAAAAGAAUAAAADAAEAAAAGAAYAAAAGAAEAAAAHAAYAAAABAAMAAAAIAAYAAAABAAMAAAAJAAYAAAABAAMAAAAKAAYAAAABAAMAAAALAAYAAAABAAMAAAAMAAYAAAABAAMAAAANAAYAAAABAAMAAAAOAAYAAAAHAAEAAAAOAAUAAAADAAEAAAAOAAQAAAADAAEAAAAOAAMAAAADAAEAAAAOAAIAAAAHAAAAAAANAAIAAAABAAMAAAAMAAIAAAABAAMAAAALAAIAAAABAAMAAAAKAAIAAAABAAMAAAAJAAIAAAABAAMAAAAIAAIAAAABAAMAAAAHAAIAAAABAAMAAAA=")
+tile_map_data = PackedByteArray("AAAGAAIAAAAGAAAAAAAGAAMAAAADAAEAAAAGAAQAAAADAAEAAAAGAAUAAAADAAEAAAAGAAYAAAAGAAEAAAAHAAYAAAABAAMAAAAHAAIAAAABAAMAAAAIAAIAAAABAAMAAAAJAAIAAAABAAMAAAAKAAIAAAAHAAIAAAALAAIAAAABAAMAAAAIAAYAAAABAAMAAAAJAAYAAAABAAMAAAAKAAYAAAAGAAMAAAALAAYAAAABAAMAAAAKAAMAAAADAAIAAAAKAAUAAAADAAAAAAAIAAQAAwAAAAAAAQAMAAMAAAAGAAEAAAANAAMAAAAHAAAAAAAMAAIAAAAHAAAAAAANAAUAAAAHAAEAAAAMAAUAAAAGAAAAAAAMAAYAAAAHAAEAAAANAAQAAAADAAEAAAA=")
 
 [node name="Background" type="CanvasLayer" parent="." unique_id=1755973903]
 layer = -2
@@ -58,7 +58,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("9_ljeji")
+texture = ExtResource("9_h66bl")
 stretch_mode = 1
 
 [node name="Radial" type="CanvasLayer" parent="." unique_id=155536325]

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Game Off Jam: Name TBD"
-run/main_scene="uid://cqd2hwt0rwxkk"
+run/main_scene="uid://bdwbwvx5e3mct"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
