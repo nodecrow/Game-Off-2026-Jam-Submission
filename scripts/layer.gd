@@ -11,6 +11,6 @@ func set_color(color: Color) -> void:
 
 func on_level_hue_changed(layer_hue: Palette.Hue) -> void:
 	if hue == layer_hue:
-		self.visible = false
+		self.modulate.a = 0.3
 	else:
-		self.visible = true
+		self.modulate.a = 1.0

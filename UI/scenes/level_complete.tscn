@@ -4,6 +4,7 @@
 
 [node name="LevelComplete" type="CanvasLayer" unique_id=1814909238]
 process_mode = 3
+layer = 2
 script = ExtResource("1_8blts")
 
 [node name="Background" type="ColorRect" parent="." unique_id=225173543]
@@ -48,9 +49,11 @@ autowrap_mode = 0
 [node name="NextLevelButton" type="Button" parent="Control/CenterContainer/VBoxContainer" unique_id=1602114123]
 unique_name_in_owner = true
 layout_mode = 2
+action_mode = 0
 text = "Next Level"
 
 [node name="LevelSelectButton" type="Button" parent="Control/CenterContainer/VBoxContainer" unique_id=1836344355]
 unique_name_in_owner = true
 layout_mode = 2
+action_mode = 0
 text = "Level Select"

@@ -59,6 +59,7 @@ layer = -2
 [node name="ColorRect" type="ColorRect" parent="Background" unique_id=1419009234]
 offset_right = 320.0
 offset_bottom = 180.0
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="TextureRect" type="TextureRect" parent="Background" unique_id=960578035]
@@ -71,6 +72,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("10_h5dly")
 stretch_mode = 1
 

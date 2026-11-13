@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dj7kqd0atgwst" path="res://assets/sprites/paint_animation.png" id="2_qhqgy"]
 [ext_resource type="AudioStream" uid="uid://cgl0vmlwh65fr" path="res://assets/sounds/elastic_twang.wav" id="3_qhqgy"]
 [ext_resource type="AudioStream" uid="uid://rybkfdfbbbfo" path="res://assets/sounds/universfield-cartoon-splat-310479.mp3" id="4_dqkch"]
+[ext_resource type="AudioStream" uid="uid://t612r3c5d3j3" path="res://assets/sounds/Select 1.wav" id="4_qlg0r"]
 
 [sub_resource type="Animation" id="Animation_qhqgy"]
 length = 0.001
@@ -78,6 +79,12 @@ unique_name_in_owner = true
 z_as_relative = false
 volume_db = -11.882
 pitch_scale = 0.62
+
+[node name="ShiftErrorSound" type="AudioStreamPlayer2D" parent="." unique_id=631414334]
+unique_name_in_owner = true
+stream = ExtResource("4_qlg0r")
+volume_db = 2.114
+pitch_scale = 0.2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1772833480]
 unique_name_in_owner = true

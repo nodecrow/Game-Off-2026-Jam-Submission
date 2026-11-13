@@ -11,6 +11,7 @@ var inputs = {
 
 @onready var player_sprite: Sprite2D = %Sprite2D
 @onready var movement_sound: AudioStreamPlayer2D = %MovementSound
+@onready var shift_error_sound: AudioStreamPlayer2D = %ShiftErrorSound
 @onready var animation: AnimationPlayer = %AnimationPlayer
 
 func _ready() -> void:
@@ -42,3 +43,6 @@ func move_animation() -> void:
 func paint_animation() -> void:
 	animation.play("paint")
 	await animation.animation_finished
+
+func shift_error() -> void:
+	shift_error_sound.play()

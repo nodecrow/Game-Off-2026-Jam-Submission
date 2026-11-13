@@ -15,6 +15,7 @@ const PLAYER_ID = 3
 
 var level_hue: Palette.Hue = Palette.Hue.WHITE
 var player: Player
+var level_start_position: Vector2
 var base_layer: TileMapLayer
 var floor_layer: TileMapLayer
 var color_layers: Array[Node]
@@ -27,6 +28,7 @@ func _ready() -> void:
 	level_changed()
 
 func level_changed() -> void:
+	level_start_position = get_tree().current_scene.global_position
 	floor_layer = get_tree().get_first_node_in_group("FloorLayer")
 	base_layer = get_tree().get_first_node_in_group("LevelTileMap")
 	color_layers = get_tree().get_nodes_in_group("ColorLayers")
@@ -75,6 +77,8 @@ func is_all_spots_covered() -> bool:
 
 func shift_color(new_hue: Palette.Hue) -> void:
 	if not can_shift(new_hue):
+		player.shift_error()
+		shake_level()
 		return
 	
 	past_turns.append([])
@@ -132,7 +136,19 @@ func can_shift(new_hue: Palette.Hue) -> bool:
 					return false
 	return true
 
+func shake_level() -> void:
+	var tween := create_tween()
+	var x_offset := Vector2(3.0, 0.0)
+	var y_offset := Vector2(0.0, 3.0)
+	tween.tween_property(get_tree().current_scene, "position", level_start_position + x_offset, 0.1)
+	tween.tween_property(get_tree().current_scene, "position", level_start_position + y_offset, 0.1)
+	tween.tween_property(get_tree().current_scene, "position", level_start_position, 0.1)
+	tween.tween_property(get_tree().current_scene, "position", level_start_position, 0.1)
+
 func game_over() -> void:
+	player.process_mode = Node.PROCESS_MODE_DISABLED
+	var color_wheel = get_tree().get_first_node_in_group("ColorWheel")
+	color_wheel.process_mode = Node.PROCESS_MODE_DISABLED
 	var level_complete_screen = LEVEL_COMPLETE.instantiate()
 	self.add_child(level_complete_screen)
 	GameManager.complete_level()
