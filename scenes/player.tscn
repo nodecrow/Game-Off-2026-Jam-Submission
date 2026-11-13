@@ -83,8 +83,8 @@ pitch_scale = 0.62
 [node name="ShiftErrorSound" type="AudioStreamPlayer2D" parent="." unique_id=631414334]
 unique_name_in_owner = true
 stream = ExtResource("4_qlg0r")
-volume_db = 2.114
-pitch_scale = 0.2
+volume_db = -2.959
+pitch_scale = 0.15
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1772833480]
 unique_name_in_owner = true

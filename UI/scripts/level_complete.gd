@@ -4,6 +4,7 @@ extends CanvasLayer
 @onready var next_level_button: Button = %NextLevelButton
 @onready var level_select_button: Button = %LevelSelectButton
 @onready var control: Control = %Control
+@onready var level_complete_sound: AudioStreamPlayer = %LevelCompleteSound
 
 func _ready() -> void:
 	next_level_button.pressed.connect(_on_next_level_button_pressed)
@@ -17,6 +18,7 @@ func fade_in() -> void:
 	tween.parallel()
 	tween.tween_property(control, "modulate:a", 1.0, 2.0)
 	tween.tween_property(background, "modulate:a", 0.5, 2.0)
+	level_complete_sound.play()
 
 func _on_next_level_button_pressed() -> void:
 	GameManager.start_level(GameManager.current_level + 1)

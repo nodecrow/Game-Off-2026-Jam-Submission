@@ -22,7 +22,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if moving:
 		return
 	for direction in inputs.keys():
-		if event.is_action_pressed(direction):
+		if event.is_action_pressed(direction, true):
 			if can_move(inputs[direction]):
 				Level.past_turns.append([]) # Add turn to history
 				move_animation()

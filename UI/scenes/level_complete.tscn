@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://nitka7udo3co"]
 
 [ext_resource type="Script" uid="uid://drn6y5au8didf" path="res://UI/scripts/level_complete.gd" id="1_8blts"]
+[ext_resource type="AudioStream" uid="uid://bcigjo8fsnakm" path="res://assets/sounds/UI_Level_Complete_V02.wav" id="2_pqxsq"]
 
 [node name="LevelComplete" type="CanvasLayer" unique_id=1814909238]
 process_mode = 3
@@ -57,3 +58,9 @@ unique_name_in_owner = true
 layout_mode = 2
 action_mode = 0
 text = "Level Select"
+
+[node name="LevelCompleteSound" type="AudioStreamPlayer" parent="." unique_id=174290782]
+unique_name_in_owner = true
+stream = ExtResource("2_pqxsq")
+volume_db = -2.877
+pitch_scale = 0.61
