@@ -5,8 +5,15 @@ const MENU = preload("uid://bbkwfd1iodqa5")
 const CREDITS = preload("uid://dykbi6mfsof5c")
 const SETTINGS = preload("uid://dh5vomjhe5gh3")
 
+const LEVEL_1 = preload("uid://cqd2hwt0rwxkk")
+const LEVEL_2 = preload("uid://ct57n2c3787mm")
+const LEVEL_3 = preload("uid://cko3uoq0ug5yn")
+
+
 var levels: Array[PackedScene] = [
-	preload("uid://cqd2hwt0rwxkk"), # Level 1
+	LEVEL_1,
+	LEVEL_2,
+	LEVEL_3
 ]
 
 var current_level: int = 0

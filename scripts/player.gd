@@ -27,6 +27,7 @@ func _unhandled_input(event: InputEvent) -> void:
 				Level.past_turns.append([]) # Add turn to history
 				move_animation()
 				move(inputs[direction])
+				await tween.finished
 				if Level.is_all_spots_covered():
 					Level.game_over()
 	
@@ -34,10 +35,10 @@ func _unhandled_input(event: InputEvent) -> void:
 		Level.undo_last_move()
 
 func move_animation() -> void:
-	var tween: Tween = create_tween()
-	tween.tween_property(player_sprite, "scale", Vector2(0.75, 1.25), 0.05)
-	tween.tween_property(player_sprite, "scale", Vector2(1.25, 0.75), 0.05)
-	tween.tween_property(player_sprite, "scale", Vector2(1.0, 1.0), 0.05)
+	var squash_tween := create_tween()
+	squash_tween.tween_property(player_sprite, "scale", Vector2(0.75, 1.25), 0.05)
+	squash_tween.tween_property(player_sprite, "scale", Vector2(1.25, 0.75), 0.05)
+	squash_tween.tween_property(player_sprite, "scale", Vector2(1.0, 1.0), 0.05)
 	movement_sound.play()
 
 func paint_animation() -> void:
