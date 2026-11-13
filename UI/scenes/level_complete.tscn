@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://nitka7udo3co"]
+
+[ext_resource type="Script" uid="uid://drn6y5au8didf" path="res://UI/scripts/level_complete.gd" id="1_8blts"]
+
+[node name="LevelComplete" type="CanvasLayer" unique_id=1814909238]
+process_mode = 3
+script = ExtResource("1_8blts")
+
+[node name="Background" type="ColorRect" parent="." unique_id=225173543]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Control" type="Control" parent="." unique_id=1973235746]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Control" unique_id=1577871211]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/CenterContainer" unique_id=1616426746]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/CenterContainer/VBoxContainer" unique_id=890112090]
+layout_mode = 2
+text = "Level Complete!"
+fit_content = true
+autowrap_mode = 0
+
+[node name="NextLevelButton" type="Button" parent="Control/CenterContainer/VBoxContainer" unique_id=1602114123]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Next Level"
+
+[node name="LevelSelectButton" type="Button" parent="Control/CenterContainer/VBoxContainer" unique_id=1836344355]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Level Select"

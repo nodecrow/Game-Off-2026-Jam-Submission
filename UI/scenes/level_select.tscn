@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://22ks2rd8fj0n"]
 
-[ext_resource type="Script" uid="uid://bcae4pawk51au" path="res://UI/scripts/level_select.gd" id="1_do81s"]
 [ext_resource type="PackedScene" uid="uid://d4ds4lnxo71cv" path="res://UI/scenes/level_select_button.tscn" id="2_ruqx4"]
 
 [node name="LevelSelect" type="Control" unique_id=1861225580]
@@ -10,7 +9,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_do81s")
 
 [node name="Label" type="Label" parent="." unique_id=1228975895]
 layout_mode = 1

@@ -9,8 +9,8 @@ var levels: Array[PackedScene] = [
 	preload("uid://cqd2hwt0rwxkk"), # Level 1
 ]
 
-var current_level: int = -1
-var highest_level_unlocked: int = -1
+var current_level: int = 0
+var highest_level_unlocked: int = 0
 
 func start_level(index: int) -> void:
 	current_level = index
@@ -22,7 +22,6 @@ func is_level_unlocked(index: int) -> bool:
 func complete_level() -> void:
 	if current_level == highest_level_unlocked:
 		highest_level_unlocked += 1
-	go_to_level_select()
 
 func go_to_level_select() -> void:
 	print("LEVEL SELECT")

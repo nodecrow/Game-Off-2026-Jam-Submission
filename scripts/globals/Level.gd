@@ -7,6 +7,7 @@ class Move:
 class ColorShift:
 	var old_hue: Palette.Hue
 
+const LEVEL_COMPLETE = preload("uid://nitka7udo3co")
 const WALL_ID = 0
 const CRATE_ID = 1
 const SPOT_ID = 2
@@ -99,6 +100,8 @@ func apply_hue(new_hue: Palette.Hue) -> void:
 			
 	var tween := create_tween()
 	tween.tween_property(floor_layer, "modulate", Palette.get_color(new_hue), 0.15)
+	if Level.is_all_spots_covered():
+					Level.game_over()
 
 ## This shit is really confusing, I apologize to my future self for this. Also next time I seriously
 ## should just design the layers to be better because this is awful
@@ -130,5 +133,7 @@ func can_shift(new_hue: Palette.Hue) -> bool:
 	return true
 
 func game_over() -> void:
+	var level_complete_screen = LEVEL_COMPLETE.instantiate()
+	self.add_child(level_complete_screen)
 	GameManager.complete_level()
 	print("WIN")
