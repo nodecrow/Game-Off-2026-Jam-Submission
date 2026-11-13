@@ -20,7 +20,6 @@ var current_hue: Palette.Hue
 
 func _ready() -> void:
 	buttons.hide()
-	num = buttons.get_child_count()
 	for b in buttons.get_children():
 		b.mouse_entered.connect(func() -> void:
 			selected_hue = b.hue
@@ -33,7 +32,6 @@ func _ready() -> void:
 					slice.set_highlight(false)
 					)
 		b.position = position
-		
 
 func _process(_delta: float) -> void:
 	global_position = Level.player.get_global_transform_with_canvas().origin
@@ -54,6 +52,7 @@ func _on_tween_finished() -> void:
 		buttons.hide()
 		
 func show_menu() -> void:
+	num = buttons.get_child_count()
 	for b: TextureRect in buttons.get_children():
 		if b.hue == Level.level_hue:
 			b.hide()
@@ -77,3 +76,8 @@ func hide_menu() -> void:
 	for b in buttons.get_children():
 		tween.tween_property(b, "position", Vector2.ZERO, speed).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
 		tween.tween_property(b, "scale", Vector2(0.5, 0.5), speed).set_trans(Tween.TRANS_LINEAR)
+
+func set_available_colors(available_colors: Array[Palette.Hue]) -> void:
+	for b: ColorSlice in buttons.get_children():
+		if b.hue not in available_colors and b.hue != Palette.Hue.WHITE:
+			b.queue_free()

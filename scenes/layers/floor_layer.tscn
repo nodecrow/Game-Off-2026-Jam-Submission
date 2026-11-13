@@ -9,5 +9,5 @@ texture = ExtResource("1_otner")
 [sub_resource type="TileSet" id="TileSet_g4v7s"]
 sources/0 = SubResource("TileSetAtlasSource_okeva")
 
-[node name="TileMapLayer" type="TileMapLayer" unique_id=379000185 groups=["FloorLayer"]]
+[node name="FloorLayer" type="TileMapLayer" unique_id=379000185 groups=["FloorLayer"]]
 tile_set = SubResource("TileSet_g4v7s")

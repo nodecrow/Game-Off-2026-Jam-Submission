@@ -1,8 +1,8 @@
 [gd_scene format=4 uid="uid://cqd2hwt0rwxkk"]
 
 [ext_resource type="PackedScene" uid="uid://cjhtvhxxhjcxk" path="res://scenes/layers/base_layer.tscn" id="1_ba4lm"]
+[ext_resource type="Script" uid="uid://drdxqtlw7a8jb" path="res://scenes/levels/game_level.gd" id="1_s1pth"]
 [ext_resource type="PackedScene" uid="uid://c6685qc5ta6ci" path="res://scenes/layers/floor_layer.tscn" id="1_x0xbu"]
-[ext_resource type="Texture2D" uid="uid://otnwxmfroatb" path="res://assets/sprites/floor.png" id="2_e66cg"]
 [ext_resource type="PackedScene" uid="uid://ci0rhatrplouc" path="res://scenes/layers/blue_layer.tscn" id="2_l20p6"]
 [ext_resource type="PackedScene" uid="uid://nnqjdp2sxjyu" path="res://scenes/layers/green_layer.tscn" id="3_b0nem"]
 [ext_resource type="PackedScene" uid="uid://coahc61ni20iu" path="res://scenes/layers/red_layer.tscn" id="4_x0xbu"]
@@ -11,44 +11,34 @@
 [ext_resource type="Shader" uid="uid://drac4533au3i1" path="res://scenes/scroll.gdshader" id="9_h5dly"]
 [ext_resource type="Texture2D" uid="uid://bbu6cenq8p0jh" path="res://assets/sprites/backgrounds/texture200.png" id="10_h5dly"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5fme1"]
-texture = ExtResource("2_e66cg")
-0:0/0 = 0
-1:0/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_7qr1p"]
-sources/0 = SubResource("TileSetAtlasSource_5fme1")
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5fme1"]
 shader = ExtResource("9_h5dly")
 
 [node name="Level1" type="Node2D" unique_id=1764137368]
 position = Vector2(-8, 8)
+script = ExtResource("1_s1pth")
+available_colors = Array[int]([2])
 
 [node name="Layers" type="Node2D" parent="." unique_id=1702183193]
 position = Vector2(-20, 9)
 
 [node name="FloorLayer" parent="Layers" unique_id=379000185 instance=ExtResource("1_x0xbu")]
-position = Vector2(-160, -96)
-tile_map_data = PackedByteArray("AAARAAkAAAAAAAAAAAASAAkAAAAAAAAAAAATAAkAAAAAAAAAAAAUAAkAAAAAAAAAAAAUAAgAAAAAAAAAAAAUAAcAAAAAAAAAAAAVAAcAAAAAAAAAAAAWAAcAAAAAAAAAAAAWAAgAAAAAAAAAAAAWAAkAAAAAAAAAAAAVAAkAAAAAAAAAAAAVAAgAAAAAAAAAAAAXAAkAAAAAAAAAAAAYAAkAAAAAAAAAAAAZAAkAAAAAAAAAAAAZAAoAAAAAAAAAAAAZAAsAAAAAAAAAAAAYAAsAAAAAAAAAAAAXAAsAAAAAAAAAAAAWAAsAAAAAAAAAAAAWAAwAAAAAAAAAAAAWAA0AAAAAAAAAAAAVAA0AAAAAAAAAAAAUAA0AAAAAAAAAAAAVAAwAAAAAAAAAAAAVAAsAAAAAAAAAAAAUAAsAAAAAAAAAAAAUAAwAAAAAAAAAAAATAAsAAAAAAAAAAAASAAsAAAAAAAAAAAARAAsAAAAAAAAAAAARAAoAAAAAAAAAAAASAAoAAAAAAAAAAAATAAoAAAAAAAAAAAAUAAoAAAAAAAAAAAAVAAoAAAAAAAAAAAAWAAoAAAAAAAAAAAAXAAoAAAAAAAAAAAAYAAoAAAAAAAAAAAA=")
-tile_set = SubResource("TileSet_7qr1p")
+tile_map_data = PackedByteArray("AAAKAAMAAAAAAAAAAAALAAMAAAAAAAAAAAAMAAMAAAAAAAAAAAANAAMAAAAAAAAAAAAOAAMAAAAAAAAAAAAOAAIAAAAAAAAAAAANAAIAAAAAAAAAAAAMAAIAAAAAAAAAAAALAAIAAAAAAAAAAAAKAAIAAAAAAAAAAAAKAAEAAAAAAAAAAAALAAEAAAAAAAAAAAAMAAEAAAAAAAAAAAANAAEAAAAAAAAAAAAOAAEAAAAAAAAAAAA=")
 
 [node name="BaseLayer" parent="Layers" unique_id=1574229446 instance=ExtResource("1_ba4lm")]
 z_index = 1
 position = Vector2(-160, -96)
-tile_map_data = PackedByteArray("AAAaAAgAAAAHAAAAAAAaAAkAAAADAAEAAAAaAAoAAAADAAEAAAAaAAsAAAADAAEAAAAaAAwAAAAHAAEAAAAZAAwAAAABAAMAAAAYAAwAAAABAAMAAAAXAAwAAAAGAAAAAAATAAwAAAAHAAAAAAASAAwAAAABAAMAAAARAAwAAAABAAMAAAAQAAwAAAAGAAEAAAAQAAgAAAAGAAAAAAARAAgAAAABAAMAAAASAAgAAAABAAMAAAATAAgAAAAHAAEAAAAXAAgAAAAGAAEAAAAYAAgAAAABAAMAAAAZAAgAAAABAAMAAAAYAAoAAwAAAAAAAQAQAAkAAAADAAEAAAAQAAoAAAADAAEAAAAQAAsAAAADAAEAAAATAAcAAAADAAEAAAATAAYAAAAGAAAAAAAUAAYAAAABAAMAAAAVAAYAAAABAAMAAAAWAAYAAAABAAMAAAAXAAYAAAAHAAAAAAAXAAcAAAADAAEAAAATAA0AAAADAAEAAAATAA4AAAAGAAEAAAAUAA4AAAABAAMAAAAVAA4AAAABAAMAAAAWAA4AAAABAAMAAAAXAA4AAAAHAAEAAAAXAA0AAAADAAEAAAA=")
+tile_map_data = PackedByteArray("AAAUAAYAAAABAAMAAAAVAAYAAAABAAMAAAAWAAYAAAABAAMAAAAXAAYAAAABAAMAAAAYAAYAAAABAAMAAAAZAAYAAAAHAAAAAAAZAAcAAAADAAEAAAAZAAgAAAADAAEAAAAZAAkAAAADAAEAAAAZAAoAAAAHAAEAAAAYAAoAAAABAAMAAAAXAAoAAAABAAMAAAAWAAoAAAABAAMAAAAVAAoAAAABAAMAAAAUAAoAAAABAAMAAAATAAoAAAAGAAEAAAATAAkAAAADAAEAAAATAAgAAAADAAEAAAATAAcAAAADAAEAAAATAAYAAAAGAAAAAAAXAAgAAwAAAAAAAQA=")
 
 [node name="BlueLayer" parent="Layers" unique_id=296362565 instance=ExtResource("2_l20p6")]
 position = Vector2(-160, -96)
-tile_map_data = PackedByteArray("AAATAAkAAAADAAAAAAATAAoAAAADAAEAAAATAAsAAAADAAIAAAAVAAgAAQAAAAAAAQAVAAcAAgAAAAAAAgA=")
+tile_map_data = PackedByteArray("AAAUAAgAAgAAAAAAAgAVAAgAAQAAAAAAAQAWAAcAAAADAAAAAAAWAAgAAAADAAEAAAAWAAkAAAADAAIAAAA=")
 
 [node name="GreenLayer" parent="Layers" unique_id=1949641554 instance=ExtResource("3_b0nem")]
 position = Vector2(-160, -96)
-tile_map_data = PackedByteArray("AAASAAoAAQAAAAAAAgARAAoAAgAAAAAAAwA=")
 
 [node name="RedLayer" parent="Layers" unique_id=365445802 instance=ExtResource("4_x0xbu")]
 position = Vector2(-160, -96)
-tile_map_data = PackedByteArray("AAAVAAwAAQAAAAAAAwAVAA0AAgAAAAAABAA=")
 
 [node name="YellowLayer" parent="Layers" unique_id=235360244 instance=ExtResource("5_7qr1p")]
 position = Vector2(-160, -96)

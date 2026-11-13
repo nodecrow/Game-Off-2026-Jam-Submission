@@ -1,4 +1,5 @@
 extends TextureRect
+class_name ColorSlice
 
 @export var hue: Palette.Hue
 
