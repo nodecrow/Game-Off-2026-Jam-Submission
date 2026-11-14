@@ -1,0 +1,74 @@
+[gd_scene format=4 uid="uid://2oy2s1d7bllt"]
+
+[ext_resource type="Script" uid="uid://drdxqtlw7a8jb" path="res://scripts/game_level.gd" id="1_0b0gj"]
+[ext_resource type="PackedScene" uid="uid://c6685qc5ta6ci" path="res://scenes/layers/floor_layer.tscn" id="2_1gw86"]
+[ext_resource type="PackedScene" uid="uid://ci0rhatrplouc" path="res://scenes/layers/blue_layer.tscn" id="3_1dvsy"]
+[ext_resource type="PackedScene" uid="uid://nnqjdp2sxjyu" path="res://scenes/layers/green_layer.tscn" id="4_ws67n"]
+[ext_resource type="PackedScene" uid="uid://coahc61ni20iu" path="res://scenes/layers/red_layer.tscn" id="5_2sk07"]
+[ext_resource type="PackedScene" uid="uid://cl447tcht5s3w" path="res://scenes/layers/yellow_layer.tscn" id="6_xic2j"]
+[ext_resource type="PackedScene" uid="uid://cjhtvhxxhjcxk" path="res://scenes/layers/base_layer.tscn" id="7_111y7"]
+[ext_resource type="Shader" uid="uid://drac4533au3i1" path="res://scenes/scroll.gdshader" id="8_coefh"]
+[ext_resource type="Texture2D" uid="uid://c773hum8imxhu" path="res://assets/sprites/backgrounds/texture105.png" id="9_gh0uh"]
+[ext_resource type="PackedScene" uid="uid://di0roy2mx5gon" path="res://UI/scenes/radial_menu_button.tscn" id="10_1rgfx"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5fme1"]
+shader = ExtResource("8_coefh")
+
+[node name="Level8" type="Node2D" unique_id=1764137368]
+position = Vector2(-8, 8)
+script = ExtResource("1_0b0gj")
+available_colors = Array[int]([2, 3])
+
+[node name="Layers" type="Node2D" parent="." unique_id=1781993070]
+position = Vector2(0, 12)
+
+[node name="FloorLayer" parent="Layers" unique_id=379000185 instance=ExtResource("2_1gw86")]
+position = Vector2(11, 7)
+tile_map_data = PackedByteArray("AAAHAAIAAAAAAAAAAAAJAAIAAAAAAAAAAAAHAAMAAAAAAAAAAAAHAAQAAAAAAAAAAAAHAAUAAAAAAAAAAAAIAAUAAAAAAAAAAAAKAAUAAAAAAAAAAAALAAUAAAAAAAAAAAALAAQAAAAAAAAAAAALAAMAAAAAAAAAAAAKAAMAAAAAAAAAAAAJAAMAAAAAAAAAAAAIAAQAAAAAAAAAAAAIAAMAAAAAAAAAAAAKAAQAAAAAAAAAAAAMAAIAAAAAAAAAAAAMAAMAAAAAAAAAAAAMAAQAAAAAAAAAAAAMAAUAAAAAAAAAAAAHAAYAAAAAAAAAAAAIAAYAAAAAAAAAAAAJAAYAAAAAAAAAAAAKAAYAAAAAAAAAAAALAAYAAAAAAAAAAAAMAAYAAAAAAAAAAAA=")
+
+[node name="BlueLayer" parent="Layers" unique_id=296362565 instance=ExtResource("3_1dvsy")]
+position = Vector2(11, 7)
+tile_map_data = PackedByteArray("AAAJAAMAAQAAAAAAAQAHAAMAAAADAAMAAAAKAAQAAAADAAMAAAAMAAYAAgAAAAAAAgA=")
+
+[node name="GreenLayer" parent="Layers" unique_id=47209531 instance=ExtResource("4_ws67n")]
+position = Vector2(11, 7)
+
+[node name="RedLayer" parent="Layers" unique_id=1455758624 instance=ExtResource("5_2sk07")]
+position = Vector2(11, 7)
+tile_map_data = PackedByteArray("AAAIAAQAAQAAAAAAAwAKAAMAAQAAAAAAAwAIAAMAAgAAAAAABAALAAMAAgAAAAAABAA=")
+
+[node name="YellowLayer" parent="Layers" unique_id=715764647 instance=ExtResource("6_xic2j")]
+position = Vector2(11, 7)
+tile_map_data = PackedByteArray("AAALAAQAAAADAAAAAAALAAUAAAADAAIAAAAIAAUAAAADAAMAAAA=")
+
+[node name="BaseLayer" parent="Layers" unique_id=1574229446 instance=ExtResource("7_111y7")]
+position = Vector2(11, 7)
+tile_map_data = PackedByteArray("AAAGAAEAAAAGAAAAAAAGAAIAAAADAAEAAAAGAAMAAAADAAEAAAAGAAQAAAADAAEAAAAGAAUAAAADAAEAAAAGAAYAAAADAAEAAAAGAAcAAAAGAAEAAAAHAAcAAAABAAMAAAAIAAcAAAABAAMAAAAJAAcAAAABAAMAAAAKAAcAAAABAAMAAAALAAcAAAABAAMAAAAMAAcAAAABAAMAAAANAAcAAAAHAAEAAAANAAYAAAADAAEAAAANAAUAAAADAAEAAAANAAQAAAADAAEAAAANAAMAAAADAAEAAAANAAIAAAADAAEAAAANAAEAAAAHAAAAAAAMAAEAAAABAAMAAAALAAEAAAAIAAIAAAAKAAEAAAAJAAIAAAAKAAIAAAAAAAIAAAALAAIAAAACAAIAAAAJAAEAAAABAAMAAAAIAAEAAAAHAAIAAAAHAAEAAAABAAMAAAAIAAIAAAADAAIAAAAJAAQAAAADAAAAAAAJAAUAAAADAAIAAAAKAAUAAwAAAAAAAQA=")
+
+[node name="Background" type="CanvasLayer" parent="." unique_id=1755973903]
+layer = -2
+
+[node name="ColorRect" type="ColorRect" parent="Background" unique_id=1419009234]
+offset_right = 320.0
+offset_bottom = 180.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Background" unique_id=960578035]
+modulate = Color(0.017888177, 0.017888173, 0.016221547, 1)
+texture_filter = 5
+texture_repeat = 2
+material = SubResource("ShaderMaterial_5fme1")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("9_gh0uh")
+stretch_mode = 1
+
+[node name="Radial" type="CanvasLayer" parent="." unique_id=155536325]
+
+[node name="RadialMenuButton" parent="Radial" unique_id=889342618 instance=ExtResource("10_1rgfx")]
+metadata/_edit_lock_ = true
