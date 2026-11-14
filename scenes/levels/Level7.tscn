@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cl447tcht5s3w" path="res://scenes/layers/yellow_layer.tscn" id="6_45ogs"]
 [ext_resource type="PackedScene" uid="uid://cjhtvhxxhjcxk" path="res://scenes/layers/base_layer.tscn" id="7_suvj0"]
 [ext_resource type="Shader" uid="uid://drac4533au3i1" path="res://scenes/scroll.gdshader" id="8_kuq1l"]
-[ext_resource type="Texture2D" uid="uid://cbjeqc8hgpn6e" path="res://assets/sprites/backgrounds/texture121.png" id="9_kj8k3"]
+[ext_resource type="Texture2D" uid="uid://obt3h2dnt34m" path="res://assets/sprites/backgrounds/texture181.png" id="9_kj8k3"]
 [ext_resource type="PackedScene" uid="uid://di0roy2mx5gon" path="res://UI/scenes/radial_menu_button.tscn" id="10_q3ki7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5fme1"]

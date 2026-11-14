@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://wzjvwx7n55ju"]
+[gd_scene format=4 uid="uid://w0jvwx7n55ju"]
 
 [ext_resource type="Script" uid="uid://drdxqtlw7a8jb" path="res://scripts/game_level.gd" id="1_q20si"]
 [ext_resource type="PackedScene" uid="uid://c6685qc5ta6ci" path="res://scenes/layers/floor_layer.tscn" id="2_o7yhi"]
@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cl447tcht5s3w" path="res://scenes/layers/yellow_layer.tscn" id="6_gfaf5"]
 [ext_resource type="PackedScene" uid="uid://cjhtvhxxhjcxk" path="res://scenes/layers/base_layer.tscn" id="7_7bitp"]
 [ext_resource type="Shader" uid="uid://drac4533au3i1" path="res://scenes/scroll.gdshader" id="8_q08c7"]
-[ext_resource type="Texture2D" uid="uid://c773hum8imxhu" path="res://assets/sprites/backgrounds/texture105.png" id="9_132sa"]
+[ext_resource type="Texture2D" uid="uid://b01hmexxyor0i" path="res://assets/sprites/backgrounds/texture204.png" id="9_yr581"]
 [ext_resource type="PackedScene" uid="uid://di0roy2mx5gon" path="res://UI/scenes/radial_menu_button.tscn" id="10_benyu"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5fme1"]
@@ -64,7 +64,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("9_132sa")
+texture = ExtResource("9_yr581")
 stretch_mode = 1
 
 [node name="Radial" type="CanvasLayer" parent="." unique_id=155536325]

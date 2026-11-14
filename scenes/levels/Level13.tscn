@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cl447tcht5s3w" path="res://scenes/layers/yellow_layer.tscn" id="6_l7stl"]
 [ext_resource type="PackedScene" uid="uid://cjhtvhxxhjcxk" path="res://scenes/layers/base_layer.tscn" id="7_qed3i"]
 [ext_resource type="Shader" uid="uid://drac4533au3i1" path="res://scenes/scroll.gdshader" id="8_0sxfd"]
-[ext_resource type="Texture2D" uid="uid://c773hum8imxhu" path="res://assets/sprites/backgrounds/texture105.png" id="9_i3dts"]
+[ext_resource type="Texture2D" uid="uid://bt8fium5d3i8l" path="res://assets/sprites/backgrounds/texture71.png" id="9_syluf"]
 [ext_resource type="PackedScene" uid="uid://di0roy2mx5gon" path="res://UI/scenes/radial_menu_button.tscn" id="10_tv6a5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5fme1"]
@@ -64,7 +64,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("9_i3dts")
+texture = ExtResource("9_syluf")
 stretch_mode = 1
 
 [node name="Radial" type="CanvasLayer" parent="." unique_id=155536325]

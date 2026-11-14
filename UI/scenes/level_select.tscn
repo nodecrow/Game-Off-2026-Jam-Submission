@@ -13,9 +13,10 @@ grow_vertical = 2
 [node name="Label" type="Label" parent="." unique_id=1228975895]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.337
-anchor_right = 0.66200006
-anchor_bottom = 0.128
+anchor_left = 0.24325001
+anchor_top = 0.12222222
+anchor_right = 0.7682501
+anchor_bottom = 0.25022224
 offset_left = 32.159996
 offset_right = -31.840027
 offset_bottom = -0.040000916
@@ -30,6 +31,7 @@ anchor_top = 0.12777779
 anchor_right = 1.0
 anchor_bottom = 1.0
 metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
 
 [node name="GridContainer" type="GridContainer" parent="CenterContainer" unique_id=794870655]
 layout_mode = 2
