@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://1w01mbcrvf2p" path="res://UI/scripts/level_select_button.gd" id="1_m4725"]
 
 [node name="LevelSelectButton" type="Button" unique_id=837408579]
-custom_minimum_size = Vector2(10, 10)
+custom_minimum_size = Vector2(25, 25)
 anchors_preset = -1
 anchor_right = 0.09375
 anchor_bottom = 0.16666667

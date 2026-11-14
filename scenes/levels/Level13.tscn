@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://bd6pc1l2gfynk"]
+[gd_scene format=4 uid="uid://eolhx7lvi2sl"]
 
 [ext_resource type="Script" uid="uid://drdxqtlw7a8jb" path="res://scripts/game_level.gd" id="1_htoc0"]
 [ext_resource type="PackedScene" uid="uid://c6685qc5ta6ci" path="res://scenes/layers/floor_layer.tscn" id="2_07qay"]
@@ -14,13 +14,13 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5fme1"]
 shader = ExtResource("8_0sxfd")
 
-[node name="Level8" type="Node2D" unique_id=1764137368]
+[node name="Level13" type="Node2D" unique_id=1764137368]
 position = Vector2(-8, 8)
 script = ExtResource("1_htoc0")
 available_colors = Array[int]([0])
 
 [node name="Layers" type="Node2D" parent="." unique_id=1781993070]
-position = Vector2(0, 12)
+position = Vector2(5, 11)
 
 [node name="FloorLayer" parent="Layers" unique_id=379000185 instance=ExtResource("2_07qay")]
 position = Vector2(11, 7)
