@@ -1,0 +1,136 @@
+[gd_scene format=3 uid="uid://bbkwfd1iodqa5"]
+
+[ext_resource type="Theme" uid="uid://dckeotb2esn7j" path="res://assets/main_theme.tres" id="1_3hdng"]
+[ext_resource type="Script" uid="uid://b1jg0x5ebcr6x" path="res://UI/scripts/menu.gd" id="1_jcowf"]
+[ext_resource type="Shader" uid="uid://drac4533au3i1" path="res://scenes/scroll.gdshader" id="3_iuh05"]
+[ext_resource type="Texture2D" uid="uid://c773hum8imxhu" path="res://assets/sprites/backgrounds/texture105.png" id="4_wlt46"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2u3c5"]
+shader = ExtResource("3_iuh05")
+
+[sub_resource type="Theme" id="Theme_wlt46"]
+
+[sub_resource type="Theme" id="Theme_0arac"]
+
+[sub_resource type="Theme" id="Theme_upuy7"]
+
+[sub_resource type="Theme" id="Theme_2est8"]
+
+[node name="Menu" type="Control" unique_id=562527928]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_3hdng")
+script = ExtResource("1_jcowf")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2091182560]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 180.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=254998750]
+modulate = Color(0.017888177, 0.017888173, 0.016221547, 1)
+texture_filter = 5
+texture_repeat = 2
+material = SubResource("ShaderMaterial_2u3c5")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("4_wlt46")
+stretch_mode = 1
+
+[node name="Title" type="RichTextLabel" parent="." unique_id=297324689]
+clip_contents = false
+layout_mode = 0
+offset_left = 88.0
+offset_top = 22.0
+offset_right = 232.0
+offset_bottom = 54.0
+theme = SubResource("Theme_wlt46")
+theme_type_variation = &"TitleLabel"
+bbcode_enabled = true
+text = "[wave freq=3.0]Iroban"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1710316269]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.39100003
+anchor_top = 0.328
+anchor_right = 0.609
+anchor_bottom = 0.9110001
+offset_left = -0.120010376
+offset_top = -0.040000916
+offset_right = 0.11999512
+offset_bottom = 0.019989014
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_3hdng")
+
+[node name="Play" type="Button" parent="VBoxContainer" unique_id=2072700677]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("1_3hdng")
+theme_type_variation = &"RedButton"
+text = "Play"
+
+[node name="Settings" type="Button" parent="VBoxContainer" unique_id=1989169700]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = SubResource("Theme_0arac")
+theme_type_variation = &"GreenButton"
+text = "Settings
+"
+
+[node name="Credits" type="Button" parent="VBoxContainer" unique_id=1798871032]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_upuy7")
+theme_type_variation = &"BlueButton"
+text = "Credits
+"
+
+[node name="Quit" type="Button" parent="VBoxContainer" unique_id=333938544]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_2est8")
+theme_type_variation = &"YellowButton"
+text = "Quit"
+
+[node name="Black" type="ColorRect" parent="." unique_id=495419483]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ButtonSound" type="AudioStreamPlayer" parent="." unique_id=746908015]
+unique_name_in_owner = true
