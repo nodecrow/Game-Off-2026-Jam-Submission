@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://bdwbwvx5e3mct"]
 
 [ext_resource type="Script" uid="uid://c6pmsbf1mwp18" path="res://UI/scripts/node_crow_intro.gd" id="1_siaxe"]
-[ext_resource type="FontFile" uid="uid://cokrdxwon2j1f" path="res://assets/yoster.ttf" id="2_21wfr"]
+[ext_resource type="FontFile" uid="uid://dhjxnj1fqq5ht" path="res://assets/Nunito-VariableFont_wght.ttf" id="2_siaxe"]
 [ext_resource type="Texture2D" uid="uid://dh5lygbtg333x" path="res://assets/ItchBannerBlack.png" id="3_siaxe"]
-[ext_resource type="Texture2D" uid="uid://dhc85vti6f7t3" path="res://assets/Godot Logo.png" id="4_8vr7f"]
+[ext_resource type="Texture2D" uid="uid://fuew6l30ilng" path="res://assets/logo_vertical_color_dark.png" id="4_21wfr"]
 
 [node name="Intro" type="Control" unique_id=1428547377]
 layout_mode = 3
@@ -50,7 +50,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_colors/default_color = Color(1, 1, 1, 1)
-theme_override_fonts/normal_font = ExtResource("2_21wfr")
+theme_override_fonts/normal_font = ExtResource("2_siaxe")
 theme_override_font_sizes/normal_font_size = 12
 bbcode_enabled = true
 text = "A game by"
@@ -90,7 +90,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_colors/default_color = Color(1, 1, 1, 1)
-theme_override_fonts/normal_font = ExtResource("2_21wfr")
+theme_override_fonts/normal_font = ExtResource("2_siaxe")
 theme_override_font_sizes/normal_font_size = 12
 bbcode_enabled = true
 text = "Made in"
@@ -98,35 +98,11 @@ fit_content = true
 autowrap_mode = 0
 
 [node name="TextureRect" type="TextureRect" parent="Godot/CenterContainer/VBoxContainer" unique_id=1070316319]
-custom_minimum_size = Vector2(50, 50)
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-texture = ExtResource("4_8vr7f")
+texture = ExtResource("4_21wfr")
 expand_mode = 1
 stretch_mode = 5
-
-[node name="BottomText2" type="RichTextLabel" parent="Godot/CenterContainer/VBoxContainer" unique_id=1341469854]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_colors/default_color = Color(1, 1, 1, 1)
-theme_override_fonts/normal_font = ExtResource("2_21wfr")
-theme_override_font_sizes/normal_font_size = 12
-bbcode_enabled = true
-text = "Godot"
-fit_content = true
-autowrap_mode = 0
-
-[node name="BottomText3" type="RichTextLabel" parent="Godot/CenterContainer/VBoxContainer" unique_id=50878704]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_colors/default_color = Color(1, 1, 1, 1)
-theme_override_fonts/normal_font = ExtResource("2_21wfr")
-theme_override_font_sizes/normal_font_size = 12
-bbcode_enabled = true
-text = "Game Engine"
-fit_content = true
-autowrap_mode = 0
 
 [node name="BlackScreen" type="ColorRect" parent="." unique_id=890398971]
 unique_name_in_owner = true

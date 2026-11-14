@@ -1,6 +1,15 @@
 [gd_scene format=3 uid="uid://bbkwfd1iodqa5"]
 
+[ext_resource type="Theme" uid="uid://dckeotb2esn7j" path="res://assets/main_theme.tres" id="1_3hdng"]
 [ext_resource type="Script" uid="uid://b1jg0x5ebcr6x" path="res://UI/scripts/menu.gd" id="1_jcowf"]
+
+[sub_resource type="Theme" id="Theme_wlt46"]
+
+[sub_resource type="Theme" id="Theme_0arac"]
+
+[sub_resource type="Theme" id="Theme_upuy7"]
+
+[sub_resource type="Theme" id="Theme_2est8"]
 
 [node name="Menu" type="Control" unique_id=562527928]
 layout_mode = 3
@@ -9,6 +18,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_3hdng")
 script = ExtResource("1_jcowf")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1710316269]
@@ -24,10 +34,15 @@ offset_right = 0.11999512
 offset_bottom = -0.060012817
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_3hdng")
 
 [node name="Title" type="RichTextLabel" parent="VBoxContainer" unique_id=297324689]
+clip_contents = false
 layout_mode = 2
-text = "Name TBD"
+theme = SubResource("Theme_wlt46")
+theme_type_variation = &"TitleLabel"
+bbcode_enabled = true
+text = "[wave freq=3.0]Iroban"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
@@ -35,16 +50,41 @@ autowrap_mode = 0
 [node name="Play" type="Button" parent="VBoxContainer" unique_id=2072700677]
 unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("1_3hdng")
+theme_type_variation = &"RedButton"
 text = "Play"
 
 [node name="Settings" type="Button" parent="VBoxContainer" unique_id=1989169700]
 unique_name_in_owner = true
 layout_mode = 2
+theme = SubResource("Theme_0arac")
+theme_type_variation = &"GreenButton"
 text = "Settings
 "
 
 [node name="Credits" type="Button" parent="VBoxContainer" unique_id=1798871032]
 unique_name_in_owner = true
 layout_mode = 2
+theme = SubResource("Theme_upuy7")
+theme_type_variation = &"BlueButton"
 text = "Credits
 "
+
+[node name="Quit" type="Button" parent="VBoxContainer" unique_id=333938544]
+unique_name_in_owner = true
+layout_mode = 2
+theme = SubResource("Theme_2est8")
+theme_type_variation = &"YellowButton"
+text = "Quit"
+
+[node name="Black" type="ColorRect" parent="." unique_id=495419483]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
