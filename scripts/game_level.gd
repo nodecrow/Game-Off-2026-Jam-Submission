@@ -1,4 +1,5 @@
 extends Node2D
+class_name GameLevel
 
 @export var available_colors: Array[Palette.Hue] = []
 

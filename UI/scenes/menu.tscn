@@ -5,6 +5,7 @@
 [ext_resource type="Shader" uid="uid://drac4533au3i1" path="res://scenes/scroll.gdshader" id="3_iuh05"]
 [ext_resource type="Texture2D" uid="uid://c773hum8imxhu" path="res://assets/sprites/backgrounds/texture105.png" id="4_wlt46"]
 [ext_resource type="Script" uid="uid://dtlva5uyede1r" path="res://UI/scripts/juicy_button.gd" id="5_wlt46"]
+[ext_resource type="PackedScene" uid="uid://dh5vomjhe5gh3" path="res://UI/scenes/settings.tscn" id="6_2u3c5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2u3c5"]
 shader = ExtResource("3_iuh05")
@@ -79,7 +80,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_3hdng")
 
-[node name="Play" type="Button" parent="VBoxContainer" unique_id=2072700677]
+[node name="PlayButton" type="Button" parent="VBoxContainer" unique_id=2072700677]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
@@ -90,7 +91,7 @@ theme_type_variation = &"RedButton"
 text = "Play"
 script = ExtResource("5_wlt46")
 
-[node name="Settings" type="Button" parent="VBoxContainer" unique_id=1989169700]
+[node name="SettingsButton" type="Button" parent="VBoxContainer" unique_id=1989169700]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
@@ -102,7 +103,7 @@ text = "Settings
 "
 script = ExtResource("5_wlt46")
 
-[node name="Credits" type="Button" parent="VBoxContainer" unique_id=1798871032]
+[node name="CreditsButton" type="Button" parent="VBoxContainer" unique_id=1798871032]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
@@ -114,7 +115,7 @@ text = "Credits
 "
 script = ExtResource("5_wlt46")
 
-[node name="Quit" type="Button" parent="VBoxContainer" unique_id=333938544]
+[node name="QuitButton" type="Button" parent="VBoxContainer" unique_id=333938544]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
@@ -127,6 +128,7 @@ script = ExtResource("5_wlt46")
 
 [node name="Black" type="ColorRect" parent="." unique_id=495419483]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -135,3 +137,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
+
+[node name="Settings" parent="." unique_id=1772830835 instance=ExtResource("6_2u3c5")]
+unique_name_in_owner = true
+visible = false

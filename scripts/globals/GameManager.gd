@@ -74,8 +74,8 @@ func go_to_main_menu() -> void:
 	get_tree().change_scene_to_packed(MENU)
 
 func go_to_settings() -> void:
-	print("SETTINGS")
-	get_tree().change_scene_to_packed(SETTINGS)
+	pass
+
 
 func go_to_credits() -> void:
 	print("CREDITS")

@@ -32,5 +32,6 @@ bus = &"UI"
 
 [node name="WheelClose" type="AudioStreamPlayer" parent="." unique_id=1987914239]
 unique_name_in_owner = true
+process_mode = 3
 stream = ExtResource("6_q4id7")
 bus = &"UI"

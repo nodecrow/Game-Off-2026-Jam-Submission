@@ -77,3 +77,5 @@ func set_available_colors(available_colors: Array[Palette.Hue]) -> void:
 	for b: ColorSlice in buttons.get_children():
 		if b.hue not in available_colors and b.hue != Palette.Hue.WHITE:
 			b.queue_free()
+	if available_colors.is_empty():
+		set_process_unhandled_input(false)

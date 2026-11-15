@@ -16,8 +16,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wf35d")
-radius = null
-speed = null
 
 [node name="Buttons" type="Control" parent="." unique_id=1050318176]
 unique_name_in_owner = true
