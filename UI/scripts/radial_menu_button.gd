@@ -11,7 +11,6 @@ const UI_HOVER_FABRIC_SLIDE_V_02 = preload("uid://k1n85sil1n4o")
 @export var speed = 0.25
 
 @onready var buttons: Control = %Buttons
-@onready var ui_fx: AudioStreamPlayer2D = %"UI FX"
 
 var num
 var active = false
@@ -26,8 +25,7 @@ func _ready() -> void:
 			for slice in buttons.get_children():
 				if slice == b:
 					slice.set_highlight(true)
-					ui_fx.stream = UI_HOVER_BUBBLE_BLIP_V_04
-					ui_fx.play()
+					AudioPlayer.play_wheel_hover()
 				else:
 					slice.set_highlight(false)
 					)
@@ -38,13 +36,11 @@ func _process(_delta: float) -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("colorwheel"):
-		ui_fx.stream = UI_HOVER_FABRIC_SLIDE_V_01 
-		ui_fx.play()
+		AudioPlayer.play_wheel_open()
 		show_menu()
 	elif event.is_action_released("colorwheel"):
 		Level.shift_color(selected_hue)
-		ui_fx.stream = UI_HOVER_FABRIC_SLIDE_V_02
-		ui_fx.play()
+		AudioPlayer.play_wheel_close()
 		hide_menu()
 
 func _on_tween_finished() -> void:

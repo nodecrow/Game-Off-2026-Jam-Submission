@@ -16,6 +16,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wf35d")
+radius = null
+speed = null
 
 [node name="Buttons" type="Control" parent="." unique_id=1050318176]
 unique_name_in_owner = true
@@ -69,7 +71,3 @@ pivot_offset = Vector2(8, 8)
 texture = ExtResource("6_kpga7")
 script = ExtResource("3_ir67i")
 hue = 1
-
-[node name="UI FX" type="AudioStreamPlayer2D" parent="." unique_id=461706748]
-unique_name_in_owner = true
-volume_db = -5.6

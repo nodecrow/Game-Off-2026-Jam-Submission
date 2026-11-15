@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://cxfg6b6fe6mmo"]
+
+[ext_resource type="Script" uid="uid://v534cryd40ig" path="res://scripts/globals/AudioPlayer.gd" id="1_cwed0"]
+[ext_resource type="AudioStream" uid="uid://c8rjmighxy53r" path="res://assets/sounds/ui_sounds/UI_Click_Bubble_Pop_V01.wav" id="2_s33tu"]
+[ext_resource type="AudioStream" uid="uid://da8uwv526noka" path="res://assets/sounds/ui_sounds/UI_Hover_Bubble_Blip_V02.wav" id="3_l3p6p"]
+[ext_resource type="AudioStream" uid="uid://bwh6wu2yuo01d" path="res://assets/sounds/ui_sounds/UI_Hover_Fabric_Slide_V01.wav" id="4_inr5c"]
+[ext_resource type="AudioStream" uid="uid://c76s52o084lgi" path="res://assets/sounds/ui_sounds/UI_Hover_Bubble_Blip_V04.wav" id="5_814g2"]
+[ext_resource type="AudioStream" uid="uid://k1n85sil1n4o" path="res://assets/sounds/ui_sounds/UI_Hover_Fabric_Slide_V02.wav" id="6_q4id7"]
+
+[node name="UISounds" type="Node" unique_id=1313829504]
+script = ExtResource("1_cwed0")
+
+[node name="ButtonClick" type="AudioStreamPlayer" parent="." unique_id=489554958]
+unique_name_in_owner = true
+stream = ExtResource("2_s33tu")
+bus = &"UI"
+
+[node name="ButtonHover" type="AudioStreamPlayer" parent="." unique_id=168513666]
+unique_name_in_owner = true
+stream = ExtResource("3_l3p6p")
+bus = &"UI"
+
+[node name="WheelOpen" type="AudioStreamPlayer" parent="." unique_id=286690858]
+unique_name_in_owner = true
+stream = ExtResource("4_inr5c")
+bus = &"UI"
+
+[node name="WheelHover" type="AudioStreamPlayer" parent="." unique_id=1393345950]
+unique_name_in_owner = true
+stream = ExtResource("5_814g2")
+bus = &"UI"
+
+[node name="WheelClose" type="AudioStreamPlayer" parent="." unique_id=1987914239]
+unique_name_in_owner = true
+stream = ExtResource("6_q4id7")
+bus = &"UI"

@@ -7,3 +7,6 @@ hue = 2
 
 [node name="Sprite2D" parent="." index="0" unique_id=1569421116]
 z_index = 1
+
+[node name="AudioStreamPlayer2D" parent="." index="1" unique_id=1566631501]
+bus = &"SFX"
