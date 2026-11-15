@@ -14,10 +14,11 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5fme1"]
 shader = ExtResource("8_7obgn")
 
-[node name="Level4" type="Node2D" unique_id=1764137368]
+[node name="Level 4" type="Node2D" unique_id=1764137368]
 position = Vector2(-8, 8)
 script = ExtResource("1_3eodh")
 available_colors = Array[int]([3, 1])
+optimal_moves = 30
 
 [node name="Layers" type="Node2D" parent="." unique_id=1781993070]
 position = Vector2(8, 26)

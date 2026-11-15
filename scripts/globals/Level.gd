@@ -76,6 +76,9 @@ func is_all_spots_covered() -> bool:
 	return true
 
 func shift_color(new_hue: Palette.Hue) -> void:
+	if new_hue == level_hue:
+		return
+
 	if not can_shift(new_hue):
 		player.shift_error()
 		shake_level()
@@ -146,10 +149,16 @@ func shake_level() -> void:
 	tween.tween_property(get_tree().current_scene, "position", level_start_position, 0.1)
 
 func game_over() -> void:
+	var current_level: GameLevel = get_tree().current_scene
+	
 	player.process_mode = Node.PROCESS_MODE_DISABLED
 	var color_wheel = get_tree().get_first_node_in_group("ColorWheel")
 	color_wheel.process_mode = Node.PROCESS_MODE_DISABLED
+	
 	var level_complete_screen = LEVEL_COMPLETE.instantiate()
+	level_complete_screen.optimal_moves = current_level.optimal_moves
+	level_complete_screen.player_moves = past_turns.size()
+	
 	self.add_child(level_complete_screen)
 	GameManager.complete_level()
 	print("WIN")

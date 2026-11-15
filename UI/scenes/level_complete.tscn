@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://nitka7udo3co"]
 
 [ext_resource type="Script" uid="uid://drn6y5au8didf" path="res://UI/scripts/level_complete.gd" id="1_8blts"]
-[ext_resource type="AudioStream" uid="uid://bcigjo8fsnakm" path="res://assets/sounds/UI_Level_Complete_V02.wav" id="2_pqxsq"]
+[ext_resource type="Theme" uid="uid://dckeotb2esn7j" path="res://assets/main_theme.tres" id="2_pqxsq"]
 
 [node name="LevelComplete" type="CanvasLayer" unique_id=1814909238]
 process_mode = 3
@@ -27,6 +27,30 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+theme = ExtResource("2_pqxsq")
+
+[node name="LetterGrade" type="RichTextLabel" parent="Control" unique_id=307282720]
+unique_name_in_owner = true
+clip_contents = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.68200004
+anchor_top = 0.39400002
+anchor_right = 0.83000004
+anchor_bottom = 0.712
+offset_left = -0.24002075
+offset_top = 0.0799942
+offset_right = 0.3999939
+offset_bottom = -0.16000366
+offset_transform_enabled = true
+theme_type_variation = &"TitleLabel"
+theme_override_font_sizes/normal_font_size = 46
+text = "A"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="CenterContainer" type="CenterContainer" parent="Control" unique_id=1577871211]
 layout_mode = 1
@@ -37,30 +61,64 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/CenterContainer" unique_id=1616426746]
+[node name="PanelContainer" type="PanelContainer" parent="Control/CenterContainer" unique_id=2107831466]
+layout_mode = 2
+theme = ExtResource("2_pqxsq")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/CenterContainer/PanelContainer" unique_id=1815032425]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/CenterContainer/PanelContainer/MarginContainer" unique_id=1616426746]
 layout_mode = 2
 mouse_filter = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Control/CenterContainer/VBoxContainer" unique_id=890112090]
+[node name="LevelComplete" type="RichTextLabel" parent="Control/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=890112090]
+unique_name_in_owner = true
 layout_mode = 2
-text = "Level Complete!"
+offset_transform_enabled = true
 fit_content = true
 autowrap_mode = 0
 
-[node name="NextLevelButton" type="Button" parent="Control/CenterContainer/VBoxContainer" unique_id=1602114123]
+[node name="PlayerMoves" type="RichTextLabel" parent="Control/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=767136972]
 unique_name_in_owner = true
 layout_mode = 2
+offset_transform_enabled = true
+theme_override_font_sizes/normal_font_size = 10
+fit_content = true
+autowrap_mode = 0
+
+[node name="OptimalMoves" type="RichTextLabel" parent="Control/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1358065621]
+unique_name_in_owner = true
+layout_mode = 2
+offset_transform_enabled = true
+theme_override_font_sizes/normal_font_size = 10
+fit_content = true
+autowrap_mode = 0
+
+[node name="Grade" type="RichTextLabel" parent="Control/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=2045236405]
+unique_name_in_owner = true
+layout_mode = 2
+offset_transform_enabled = true
+theme_override_font_sizes/normal_font_size = 10
+fit_content = true
+autowrap_mode = 0
+
+[node name="NextLevelButton" type="Button" parent="Control/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1602114123]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"RedButton"
+theme_override_font_sizes/font_size = 13
 action_mode = 0
 text = "Next Level"
 
-[node name="LevelSelectButton" type="Button" parent="Control/CenterContainer/VBoxContainer" unique_id=1836344355]
+[node name="LevelSelectButton" type="Button" parent="Control/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1836344355]
 unique_name_in_owner = true
 layout_mode = 2
+theme_type_variation = &"GreenButton"
+theme_override_font_sizes/font_size = 13
 action_mode = 0
 text = "Level Select"
-
-[node name="LevelCompleteSound" type="AudioStreamPlayer" parent="." unique_id=174290782]
-unique_name_in_owner = true
-stream = ExtResource("2_pqxsq")
-volume_db = -2.877
-pitch_scale = 0.61
