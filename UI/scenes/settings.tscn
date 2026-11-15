@@ -3,6 +3,11 @@
 [ext_resource type="Theme" uid="uid://dckeotb2esn7j" path="res://assets/main_theme.tres" id="1_eis3d"]
 [ext_resource type="Script" uid="uid://b6iqr8nj8pogc" path="res://UI/scripts/settings.gd" id="1_m04yo"]
 [ext_resource type="Script" uid="uid://dtlva5uyede1r" path="res://UI/scripts/juicy_button.gd" id="2_jfwsk"]
+[ext_resource type="Shader" uid="uid://drac4533au3i1" path="res://scenes/scroll.gdshader" id="2_r7321"]
+[ext_resource type="Texture2D" uid="uid://c773hum8imxhu" path="res://assets/sprites/backgrounds/texture105.png" id="3_l31ti"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jkm6y"]
+shader = ExtResource("2_r7321")
 
 [sub_resource type="Theme" id="Theme_g4v7s"]
 
@@ -10,15 +15,25 @@
 layer = 50
 script = ExtResource("1_m04yo")
 
-[node name="Dim" type="ColorRect" parent="." unique_id=94398302]
-modulate = Color(1, 1, 1, 0.7490196)
+[node name="ColorRect" type="ColorRect" parent="." unique_id=972094058]
+offset_right = 320.0
+offset_bottom = 180.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1916972601]
+modulate = Color(0.017888177, 0.017888173, 0.016221547, 1)
+texture_filter = 5
+texture_repeat = 2
+material = SubResource("ShaderMaterial_jkm6y")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-color = Color(0, 0, 0, 1)
+texture = ExtResource("3_l31ti")
+stretch_mode = 1
 
 [node name="Control" type="Control" parent="." unique_id=213655512]
 layout_mode = 3

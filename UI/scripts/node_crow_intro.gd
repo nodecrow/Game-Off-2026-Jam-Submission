@@ -1,17 +1,17 @@
 extends Control
 
 # Intro Nodes
-@onready var godot: Control = $Godot
+@onready var game_off: Control = %"Game Off"
 @onready var nodecrow: Control = %Nodecrow
 @onready var black_screen: ColorRect = %BlackScreen
 
 func _ready() -> void:
 	# Intro Sequence
-	godot.hide()
+	game_off.hide()
 	nodecrow.hide()
 
-	await _fade_in_and_out(godot)
-	godot.queue_free()
+	await _fade_in_and_out(game_off)
+	game_off.queue_free()
 	await _fade_in_and_out(nodecrow)
 	nodecrow.queue_free()
 	

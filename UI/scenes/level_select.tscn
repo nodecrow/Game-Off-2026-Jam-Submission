@@ -1,6 +1,13 @@
 [gd_scene format=3 uid="uid://22ks2rd8fj0n"]
 
+[ext_resource type="Theme" uid="uid://dckeotb2esn7j" path="res://assets/main_theme.tres" id="1_ruqx4"]
+[ext_resource type="Shader" uid="uid://drac4533au3i1" path="res://scenes/scroll.gdshader" id="2_6qaex"]
 [ext_resource type="PackedScene" uid="uid://d4ds4lnxo71cv" path="res://UI/scenes/level_select_button.tscn" id="2_ruqx4"]
+[ext_resource type="Texture2D" uid="uid://dmngbw1mmrrv8" path="res://assets/sprites/backgrounds/texture222.png" id="3_iwwn3"]
+[ext_resource type="Script" uid="uid://bnclmf1wihdn1" path="res://UI/scripts/back_button.gd" id="5_iwwn3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xc7sx"]
+shader = ExtResource("2_6qaex")
 
 [node name="LevelSelect" type="Control" unique_id=1861225580]
 layout_mode = 3
@@ -9,29 +16,61 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_ruqx4")
 
-[node name="Label" type="Label" parent="." unique_id=1228975895]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1017763328]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1634384370]
+modulate = Color(0.017888177, 0.017888173, 0.016221547, 1)
+texture_filter = 5
+texture_repeat = 2
+material = SubResource("ShaderMaterial_xc7sx")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("3_iwwn3")
+stretch_mode = 1
+
+[node name="Label" type="RichTextLabel" parent="." unique_id=1975770151]
+clip_contents = false
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.24325001
+anchor_left = 0.17762502
 anchor_top = 0.12222222
-anchor_right = 0.7682501
-anchor_bottom = 0.25022224
+anchor_right = 0.8276251
+anchor_bottom = 0.21133333
 offset_left = 32.159996
 offset_right = -31.840027
 offset_bottom = -0.040000916
 grow_horizontal = 2
-text = "LEVEL SELECT"
+theme_type_variation = &"TitleLabel"
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "[wave freq=2.5]LEVEL SELECT"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
 metadata/_edit_use_anchors_ = true
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=1536262493]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.12777779
+anchor_top = 0.06666667
 anchor_right = 1.0
 anchor_bottom = 1.0
 metadata/_edit_use_anchors_ = true
-metadata/_edit_lock_ = true
 
 [node name="GridContainer" type="GridContainer" parent="CenterContainer" unique_id=794870655]
 layout_mode = 2
@@ -39,60 +78,97 @@ columns = 5
 
 [node name="LevelSelectButton" parent="CenterContainer/GridContainer" unique_id=837408579 instance=ExtResource("2_ruqx4")]
 layout_mode = 2
+theme_type_variation = &"RedButton"
 
 [node name="LevelSelectButton2" parent="CenterContainer/GridContainer" unique_id=1502736032 instance=ExtResource("2_ruqx4")]
 layout_mode = 2
+theme_type_variation = &"RedButton"
 
 [node name="LevelSelectButton3" parent="CenterContainer/GridContainer" unique_id=1229253668 instance=ExtResource("2_ruqx4")]
 layout_mode = 2
+theme_type_variation = &"RedButton"
 
 [node name="LevelSelectButton4" parent="CenterContainer/GridContainer" unique_id=1202780746 instance=ExtResource("2_ruqx4")]
 layout_mode = 2
+theme_type_variation = &"RedButton"
 
 [node name="LevelSelectButton5" parent="CenterContainer/GridContainer" unique_id=1211651411 instance=ExtResource("2_ruqx4")]
 layout_mode = 2
+theme_type_variation = &"RedButton"
 
 [node name="LevelSelectButton6" parent="CenterContainer/GridContainer" unique_id=1617479872 instance=ExtResource("2_ruqx4")]
 layout_mode = 2
+theme_type_variation = &"GreenButton"
 
 [node name="LevelSelectButton7" parent="CenterContainer/GridContainer" unique_id=572007408 instance=ExtResource("2_ruqx4")]
 layout_mode = 2
+theme_type_variation = &"GreenButton"
 
 [node name="LevelSelectButton8" parent="CenterContainer/GridContainer" unique_id=577814788 instance=ExtResource("2_ruqx4")]
 layout_mode = 2
+theme_type_variation = &"GreenButton"
 
 [node name="LevelSelectButton9" parent="CenterContainer/GridContainer" unique_id=643602216 instance=ExtResource("2_ruqx4")]
 layout_mode = 2
+theme_type_variation = &"GreenButton"
 
 [node name="LevelSelectButton10" parent="CenterContainer/GridContainer" unique_id=1240393220 instance=ExtResource("2_ruqx4")]
 layout_mode = 2
+theme_type_variation = &"GreenButton"
 
 [node name="LevelSelectButton11" parent="CenterContainer/GridContainer" unique_id=1497471708 instance=ExtResource("2_ruqx4")]
 layout_mode = 2
+theme_type_variation = &"BlueButton"
 
 [node name="LevelSelectButton12" parent="CenterContainer/GridContainer" unique_id=1739137674 instance=ExtResource("2_ruqx4")]
 layout_mode = 2
+theme_type_variation = &"BlueButton"
 
 [node name="LevelSelectButton13" parent="CenterContainer/GridContainer" unique_id=2100914681 instance=ExtResource("2_ruqx4")]
 layout_mode = 2
+theme_type_variation = &"BlueButton"
 
 [node name="LevelSelectButton14" parent="CenterContainer/GridContainer" unique_id=2015851886 instance=ExtResource("2_ruqx4")]
 layout_mode = 2
+theme_type_variation = &"BlueButton"
 
 [node name="LevelSelectButton15" parent="CenterContainer/GridContainer" unique_id=941392743 instance=ExtResource("2_ruqx4")]
 layout_mode = 2
+theme_type_variation = &"BlueButton"
 
 [node name="LevelSelectButton16" parent="CenterContainer/GridContainer" unique_id=1138139028 instance=ExtResource("2_ruqx4")]
 layout_mode = 2
+theme_type_variation = &"YellowButton"
 
 [node name="LevelSelectButton17" parent="CenterContainer/GridContainer" unique_id=1255139780 instance=ExtResource("2_ruqx4")]
 layout_mode = 2
+theme_type_variation = &"YellowButton"
 
 [node name="LevelSelectButton18" parent="CenterContainer/GridContainer" unique_id=1172687891 instance=ExtResource("2_ruqx4")]
 layout_mode = 2
+theme_type_variation = &"YellowButton"
 
 [node name="LevelSelectButton19" parent="CenterContainer/GridContainer" unique_id=1095833112 instance=ExtResource("2_ruqx4")]
 layout_mode = 2
+theme_type_variation = &"YellowButton"
 
 [node name="LevelSelectButton20" parent="CenterContainer/GridContainer" unique_id=100191828 instance=ExtResource("2_ruqx4")]
 layout_mode = 2
+theme_type_variation = &"YellowButton"
+
+[node name="BackButton" type="Button" parent="." unique_id=1355174096]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.43100002
+anchor_top = 0.86100006
+anchor_right = 0.569
+anchor_bottom = 0.961
+offset_left = 0.07998657
+offset_top = 0.019989014
+offset_right = -0.08000183
+offset_bottom = 0.019989014
+theme_type_variation = &"RedButton"
+theme_override_font_sizes/font_size = 16
+text = "Back"
+script = ExtResource("5_iwwn3")
