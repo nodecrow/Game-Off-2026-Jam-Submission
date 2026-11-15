@@ -16,7 +16,7 @@ var optimal_moves: int
 @onready var letter_grade: RichTextLabel = %LetterGrade
 
 func _ready() -> void:
-
+	AudioPlayer.play_level_complete()
 	var grade: float = (float(optimal_moves) / player_moves) * 100
 	var current_level = get_tree().current_scene as GameLevel
 	level_complete.text = current_level.name + " complete!"

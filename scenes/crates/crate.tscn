@@ -16,6 +16,6 @@ texture = ExtResource("2_dwt0d")
 unique_name_in_owner = true
 z_index = 1
 stream = ExtResource("3_a7l6p")
-volume_db = -8.0
+volume_db = -8.2
 pitch_scale = 0.85
 bus = &"SFX"

@@ -71,21 +71,21 @@ frame = 1
 [node name="MovementSound" type="AudioStreamPlayer2D" parent="." unique_id=1768008865]
 unique_name_in_owner = true
 stream = ExtResource("3_qhqgy")
-volume_db = -12.6
+volume_db = -10.3
 pitch_scale = 1.25
 bus = &"SFX"
 
 [node name="PaintSound" type="AudioStreamPlayer2D" parent="." unique_id=830089312]
 unique_name_in_owner = true
 z_as_relative = false
-volume_db = -11.882
+volume_db = -9.6
 pitch_scale = 0.62
 bus = &"SFX"
 
 [node name="ShiftErrorSound" type="AudioStreamPlayer2D" parent="." unique_id=631414334]
 unique_name_in_owner = true
 stream = ExtResource("4_qlg0r")
-volume_db = -2.959
+volume_db = -0.5
 pitch_scale = 0.15
 bus = &"SFX"
 

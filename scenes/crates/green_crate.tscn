@@ -7,4 +7,4 @@ z_index = 1
 hue = 1
 
 [node name="AudioStreamPlayer2D" parent="." index="1" unique_id=1566631501]
-bus = &"SFX"
+volume_db = -8.2
