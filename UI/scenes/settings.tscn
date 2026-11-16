@@ -22,7 +22,7 @@ mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1916972601]
-modulate = Color(0.017888177, 0.017888173, 0.016221547, 1)
+modulate = Color(0.050980393, 0.050980393, 0.043137256, 1)
 texture_filter = 5
 texture_repeat = 2
 material = SubResource("ShaderMaterial_jkm6y")

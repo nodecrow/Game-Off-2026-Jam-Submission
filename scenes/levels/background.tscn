@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://df5t10gdv8vce"]
+
+[ext_resource type="Shader" uid="uid://drac4533au3i1" path="res://scenes/scroll.gdshader" id="1_h6hs5"]
+[ext_resource type="Texture2D" uid="uid://bbu6cenq8p0jh" path="res://assets/sprites/backgrounds/texture200.png" id="2_1iwx2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5fme1"]
+shader = ExtResource("1_h6hs5")
+
+[node name="Background" type="CanvasLayer" unique_id=268379006]
+layer = -2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=201410404]
+offset_right = 320.0
+offset_bottom = 180.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1581673423]
+modulate = Color(0.03449735, 0.034497473, 0.027603969, 1)
+texture_filter = 5
+texture_repeat = 2
+material = SubResource("ShaderMaterial_5fme1")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_1iwx2")
+stretch_mode = 1

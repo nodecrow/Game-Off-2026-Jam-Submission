@@ -9,6 +9,8 @@ extends Control
 @onready var settings: CanvasLayer = %Settings
 
 func _ready() -> void:
+	if OS.has_feature("web"):
+		quit_button.disabled = true
 	settings.hide()
 	_fade_in()
 	play_button.pressed.connect(_on_play_pressed)

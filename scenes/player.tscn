@@ -78,7 +78,7 @@ bus = &"SFX"
 [node name="PaintSound" type="AudioStreamPlayer2D" parent="." unique_id=830089312]
 unique_name_in_owner = true
 z_as_relative = false
-volume_db = -9.6
+volume_db = -7.0
 pitch_scale = 0.62
 bus = &"SFX"
 

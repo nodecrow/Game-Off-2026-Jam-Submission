@@ -16,6 +16,7 @@ var optimal_moves: int
 @onready var letter_grade: RichTextLabel = %LetterGrade
 
 func _ready() -> void:
+	
 	AudioPlayer.play_level_complete()
 	var grade: float = (float(optimal_moves) / player_moves) * 100
 	var current_level = get_tree().current_scene as GameLevel
@@ -59,8 +60,7 @@ func add_stamp(tween: Tween, label: Control, start_scale: float, start_rotation:
 func fade_in() -> void:
 	var tween := create_tween()
 	
-	tween.tween_property(control, "modulate:a", 1.0, 2.0)
-	tween.tween_property(background, "modulate:a", 0.5, 2.0)
+	tween.tween_property(background, "modulate:a", 0.3, 2.0)
 
 func _on_next_level_button_pressed() -> void:
 	GameManager.start_level(GameManager.current_level + 1)
