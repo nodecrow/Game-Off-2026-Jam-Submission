@@ -16,7 +16,6 @@ func _ready() -> void:
 func _pressed() -> void:
 		GameManager.start_level(level)
 
-
 func _on_mouse_entered() -> void:
 	var tween := create_tween()
 	tween.tween_property(self, "offset_transform_scale", Vector2(1.1, 1.1), 0.2)

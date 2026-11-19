@@ -1,0 +1,200 @@
+[gd_scene format=3 uid="uid://bbkwfd1iodqa5"]
+
+[ext_resource type="Theme" uid="uid://dckeotb2esn7j" path="res://assets/main_theme.tres" id="1_3hdng"]
+[ext_resource type="Script" uid="uid://b1jg0x5ebcr6x" path="res://UI/scripts/menu.gd" id="1_jcowf"]
+[ext_resource type="Shader" uid="uid://drac4533au3i1" path="res://scenes/scroll.gdshader" id="3_iuh05"]
+[ext_resource type="Texture2D" uid="uid://c773hum8imxhu" path="res://assets/sprites/backgrounds/texture105.png" id="4_wlt46"]
+[ext_resource type="Script" uid="uid://dtlva5uyede1r" path="res://UI/scripts/juicy_button.gd" id="5_wlt46"]
+[ext_resource type="PackedScene" uid="uid://dh5vomjhe5gh3" path="res://UI/scenes/settings.tscn" id="6_2u3c5"]
+[ext_resource type="PackedScene" uid="uid://dykbi6mfsof5c" path="res://UI/scenes/credits.tscn" id="7_mqkct"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2u3c5"]
+shader = ExtResource("3_iuh05")
+
+[sub_resource type="Theme" id="Theme_wlt46"]
+
+[sub_resource type="Theme" id="Theme_0arac"]
+
+[sub_resource type="Theme" id="Theme_upuy7"]
+
+[sub_resource type="Theme" id="Theme_2est8"]
+
+[node name="Menu" type="Control" unique_id=562527928]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_3hdng")
+script = ExtResource("1_jcowf")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2091182560]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 180.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=254998750]
+modulate = Color(0.052813374, 0.05281353, 0.043261036, 1)
+texture_filter = 5
+texture_repeat = 2
+material = SubResource("ShaderMaterial_2u3c5")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("4_wlt46")
+stretch_mode = 1
+
+[node name="Title" type="RichTextLabel" parent="." unique_id=297324689]
+clip_contents = false
+layout_mode = 0
+offset_left = 88.0
+offset_top = 29.0
+offset_right = 232.0
+offset_bottom = 61.0
+theme = SubResource("Theme_wlt46")
+theme_type_variation = &"TitleLabel"
+bbcode_enabled = true
+text = "[wave freq=3.0]Iroban"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1710316269]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.384
+anchor_top = 0.39400002
+anchor_right = 0.60300004
+anchor_bottom = 0.97800004
+offset_left = 0.11999512
+offset_top = 0.0799942
+offset_right = 0.039978027
+offset_bottom = -0.040008545
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_3hdng")
+
+[node name="PlayButton" type="Button" parent="VBoxContainer" unique_id=2072700677]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("1_3hdng")
+theme_type_variation = &"RedButton"
+text = "Play"
+script = ExtResource("5_wlt46")
+
+[node name="SettingsButton" type="Button" parent="VBoxContainer" unique_id=1989169700]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = SubResource("Theme_0arac")
+theme_type_variation = &"GreenButton"
+text = "Settings
+"
+script = ExtResource("5_wlt46")
+
+[node name="CreditsButton" type="Button" parent="VBoxContainer" unique_id=1798871032]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_upuy7")
+theme_type_variation = &"BlueButton"
+text = "Credits
+"
+script = ExtResource("5_wlt46")
+
+[node name="QuitButton" type="Button" parent="VBoxContainer" unique_id=333938544]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_2est8")
+theme_type_variation = &"YellowButton"
+text = "Quit"
+script = ExtResource("5_wlt46")
+
+[node name="Black" type="ColorRect" parent="." unique_id=495419483]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Settings" parent="." unique_id=1772830835 instance=ExtResource("6_2u3c5")]
+unique_name_in_owner = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=173566246]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.009000001
+anchor_top = 0.011000001
+anchor_right = 0.13100001
+anchor_bottom = 0.056
+offset_left = 0.119999886
+offset_top = 0.019999862
+offset_right = 0.0799942
+offset_bottom = -0.07999992
+theme_override_colors/default_color = Color(0.37413925, 0.37413928, 0.37413922, 1)
+theme_override_font_sizes/normal_font_size = 7
+text = "nodecrow.com"
+fit_content = true
+autowrap_mode = 0
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=917215360]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.009000001
+anchor_top = 0.95000005
+anchor_right = 0.17500001
+anchor_bottom = 0.994
+offset_left = 0.119999886
+offset_top = -1.5258789e-05
+offset_bottom = 0.08000183
+grow_vertical = 0
+theme_override_colors/default_color = Color(0.37413925, 0.37413928, 0.37413922, 1)
+theme_override_font_sizes/normal_font_size = 6
+text = "© 2026 Nodecrow LLC. 
+"
+scroll_active = false
+autowrap_mode = 0
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="." unique_id=226383371]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.822
+anchor_top = 0.011000001
+anchor_right = 0.99200004
+anchor_bottom = 0.067
+offset_left = -0.040008545
+offset_top = 0.019999862
+offset_right = -0.44000244
+offset_bottom = -0.06000042
+grow_horizontal = 0
+theme_override_colors/default_color = Color(0.37413925, 0.37413928, 0.37413922, 1)
+theme_override_font_sizes/normal_font_size = 6
+text = "v0.1.0 | GAME OFF 2026
+"
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Credits" parent="." unique_id=61490035 instance=ExtResource("7_mqkct")]
+unique_name_in_owner = true
+layout_mode = 1

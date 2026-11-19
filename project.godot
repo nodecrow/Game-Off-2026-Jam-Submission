@@ -25,11 +25,13 @@ Level="*uid://cmih661kibxbj"
 GameManager="*uid://de8f7j32wea0f"
 AudioPlayer="*uid://cxfg6b6fe6mmo"
 PauseMenu="*uid://do1qdq5bmbjl"
+MusicPlayer="*uid://cistg3itydghc"
 
 [display]
 
 window/size/viewport_width=320
 window/size/viewport_height=180
+window/size/mode=3
 window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/mode="canvas_items"

@@ -27,7 +27,6 @@ color = Color(0, 0, 0, 1)
 
 [node name="Nodecrow" type="Control" parent="." unique_id=645925115]
 unique_name_in_owner = true
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -121,7 +120,6 @@ autowrap_mode = 0
 
 [node name="BlackScreen" type="ColorRect" parent="." unique_id=890398971]
 unique_name_in_owner = true
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

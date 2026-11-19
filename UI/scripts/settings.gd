@@ -17,6 +17,8 @@ var ui_bus = AudioServer.get_bus_index("UI")
 signal closed
 
 func _ready() -> void:
+
+	
 	back_button.pressed.connect(func() -> void:
 		closed.emit()
 		self.hide())
@@ -29,6 +31,8 @@ func _ready() -> void:
 		else:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 	)
+
+	
 	master_slider.value = db_to_linear(AudioServer.get_bus_volume_db(master_bus))
 	music_slider.value = db_to_linear(AudioServer.get_bus_volume_db(music_bus))
 	sfx_slider.value = db_to_linear(AudioServer.get_bus_volume_db(sfx_bus))
@@ -39,6 +43,18 @@ func _ready() -> void:
 	sfx_slider.value_changed.connect(change_volume.bind(sfx_bus))
 	ui_slider.value_changed.connect(change_volume.bind(ui_bus))
 
+
 func change_volume(value: float, bus: int) -> void:
 	AudioServer.set_bus_volume_db(bus, linear_to_db(value))
+	match bus:
+		0:
+			master_slider.value = db_to_linear(AudioServer.get_bus_volume_db(master_bus))
+		1:
+			music_slider.value = db_to_linear(AudioServer.get_bus_volume_db(music_bus))
+			
+		2:
+			sfx_slider.value = db_to_linear(AudioServer.get_bus_volume_db(sfx_bus))
+			
+		3:
+			ui_slider.value = db_to_linear(AudioServer.get_bus_volume_db(ui_bus))
 	
