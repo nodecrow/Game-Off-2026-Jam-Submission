@@ -9,7 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://cl447tcht5s3w" path="res://scenes/layers/yellow_layer.tscn" id="7_o6ptl"]
 [ext_resource type="Shader" uid="uid://drac4533au3i1" path="res://scenes/scroll.gdshader" id="8_mctl7"]
 [ext_resource type="Texture2D" uid="uid://c773hum8imxhu" path="res://assets/sprites/backgrounds/texture105.png" id="9_dpm1s"]
+[ext_resource type="Script" uid="uid://cc1ncda7jqbph" path="res://scripts/textprompt.gd" id="10_633lq"]
 [ext_resource type="PackedScene" uid="uid://di0roy2mx5gon" path="res://UI/scenes/radial_menu_button.tscn" id="10_nkm7c"]
+[ext_resource type="Texture2D" uid="uid://uslojk4ylx7a" path="res://assets/keyboard_shift_outline.png" id="11_ur7tf"]
+[ext_resource type="FontFile" uid="uid://cpwcltc7w2oka" path="res://assets/NicoClean-Monospaced.otf" id="12_ur7tf"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5fme1"]
 shader = ExtResource("8_mctl7")
@@ -46,6 +49,7 @@ offset_right = 320.0
 offset_bottom = 180.0
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
 
 [node name="TextureRect" type="TextureRect" parent="Background" unique_id=960578035]
 modulate = Color(0.017888177, 0.017888173, 0.016221547, 1)
@@ -60,6 +64,37 @@ grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("9_dpm1s")
 stretch_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Control" type="Control" parent="Background" unique_id=2061954466]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 53.0
+offset_top = 90.0
+offset_right = 93.0
+offset_bottom = 130.0
+script = ExtResource("10_633lq")
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/Control" unique_id=1874464307]
+texture_filter = 1
+position = Vector2(25, -10.500004)
+scale = Vector2(0.5625, 0.48437488)
+texture = ExtResource("11_ur7tf")
+
+[node name="Label" type="Label" parent="Background/Control" unique_id=1385603904]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.45000002
+anchor_top = -0.35000002
+anchor_right = 0.15
+anchor_bottom = -0.15
+offset_left = 1.0
+offset_top = 1.000001
+offset_right = 1.0
+offset_bottom = 1.0
+theme_override_fonts/font = ExtResource("12_ur7tf")
+theme_override_font_sizes/font_size = 8
+text = "HOLD"
 
 [node name="Radial" type="CanvasLayer" parent="." unique_id=155536325]
 

@@ -33,6 +33,9 @@ func _unhandled_input(event: InputEvent) -> void:
 	
 	if event.is_action_pressed("undo", true):
 		Level.undo_last_move()
+	if event.is_action_pressed("reset"):
+		movement_sound.play()
+		GameManager.start_level(GameManager.current_level)
 
 func move_animation() -> void:
 	var squash_tween := create_tween()

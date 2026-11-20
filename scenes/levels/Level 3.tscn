@@ -10,6 +10,10 @@
 [ext_resource type="Shader" uid="uid://drac4533au3i1" path="res://scenes/scroll.gdshader" id="8_w8irg"]
 [ext_resource type="Texture2D" uid="uid://cbjeqc8hgpn6e" path="res://assets/sprites/backgrounds/texture121.png" id="9_g8eim"]
 [ext_resource type="PackedScene" uid="uid://di0roy2mx5gon" path="res://UI/scenes/radial_menu_button.tscn" id="10_qdxfc"]
+[ext_resource type="Script" uid="uid://cc1ncda7jqbph" path="res://scripts/textprompt.gd" id="10_yojre"]
+[ext_resource type="Texture2D" uid="uid://3c5jq2c33ge5" path="res://assets/sprites/keyboard_z_outline.png" id="11_ncsy8"]
+[ext_resource type="FontFile" uid="uid://cpwcltc7w2oka" path="res://assets/NicoClean-Monospaced.otf" id="12_5tqdc"]
+[ext_resource type="Texture2D" uid="uid://c5gj22c33vh8p" path="res://assets/keyboard_r_outline.png" id="13_fqqko"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5fme1"]
 shader = ExtResource("8_w8irg")
@@ -48,6 +52,7 @@ offset_right = 320.0
 offset_bottom = 180.0
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
 
 [node name="TextureRect" type="TextureRect" parent="Background" unique_id=960578035]
 modulate = Color(0.017888177, 0.017888173, 0.016221547, 1)
@@ -62,6 +67,54 @@ grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("9_g8eim")
 stretch_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Control" type="Control" parent="Background" unique_id=1061935243]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 46.0
+offset_top = 92.0
+offset_right = 86.0
+offset_bottom = 132.0
+script = ExtResource("10_yojre")
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/Control" unique_id=1668177971]
+texture_filter = 1
+position = Vector2(43, -13.999998)
+scale = Vector2(0.3125, 0.26909718)
+texture = ExtResource("11_ncsy8")
+
+[node name="Label" type="Label" parent="Background/Control" unique_id=1109599122]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.17500001
+anchor_top = -0.425
+anchor_right = 0.77500004
+anchor_bottom = -0.22500001
+theme_override_fonts/font = ExtResource("12_5tqdc")
+theme_override_font_sizes/font_size = 8
+text = "UNDO"
+
+[node name="Sprite2D2" type="Sprite2D" parent="Background/Control" unique_id=1125247097]
+texture_filter = 1
+position = Vector2(43, 4.611109)
+scale = Vector2(0.3125, 0.26909718)
+texture = ExtResource("13_fqqko")
+
+[node name="Label2" type="Label" parent="Background/Control" unique_id=764755107]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.17500001
+anchor_top = -0.425
+anchor_right = 0.77500004
+anchor_bottom = -0.22500001
+offset_left = -5.0000005
+offset_top = 18.0
+offset_right = 12.999998
+offset_bottom = 18.0
+theme_override_fonts/font = ExtResource("12_5tqdc")
+theme_override_font_sizes/font_size = 8
+text = "RESET"
 
 [node name="Radial" type="CanvasLayer" parent="." unique_id=155536325]
 

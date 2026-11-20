@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://b16tgxal3rfvh"]
+
+[ext_resource type="Theme" uid="uid://dckeotb2esn7j" path="res://assets/main_theme.tres" id="1_5q2h6"]
+[ext_resource type="Shader" uid="uid://drac4533au3i1" path="res://scenes/scroll.gdshader" id="2_8aegd"]
+[ext_resource type="Texture2D" uid="uid://c773hum8imxhu" path="res://assets/sprites/backgrounds/texture105.png" id="3_semjh"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2u3c5"]
+shader = ExtResource("2_8aegd")
+
+[sub_resource type="Theme" id="Theme_wlt46"]
+
+[node name="EndGame" type="Control" unique_id=562527928]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_5q2h6")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2091182560]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 180.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=254998750]
+modulate = Color(0.052813374, 0.05281353, 0.043261036, 1)
+texture_filter = 5
+texture_repeat = 2
+material = SubResource("ShaderMaterial_2u3c5")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("3_semjh")
+stretch_mode = 1
+
+[node name="Title" type="RichTextLabel" parent="." unique_id=297324689]
+clip_contents = false
+layout_mode = 0
+offset_left = 67.0
+offset_top = 57.0
+offset_right = 451.0
+offset_bottom = 89.0
+theme = SubResource("Theme_wlt46")
+theme_type_variation = &"TitleLabel"
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "[wave freq=3.0]Congratulations!"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Title2" type="RichTextLabel" parent="." unique_id=457762254]
+clip_contents = false
+layout_mode = 0
+offset_left = 49.0
+offset_top = 89.0
+offset_right = 433.0
+offset_bottom = 121.0
+theme = SubResource("Theme_wlt46")
+theme_type_variation = &"TitleLabel"
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "Thanks for playing"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0

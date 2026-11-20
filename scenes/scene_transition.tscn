@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://bue5ho2v3iih4"]
+
+[sub_resource type="GDScript" id="GDScript_eo2u1"]
+script/source = "extends CanvasLayer
+​
+@onready var fade: ColorRect = $Fade
+​
+func _ready() -> void:
+	# Keep running even if the game is paused
+	process_mode = Node.PROCESS_MODE_ALWAYS
+	# Start fully transparent and let clicks pass through
+	fade.modulate.a = 0.0
+	fade.mouse_filter = Control.MOUSE_FILTER_IGNORE
+​
+func change_scene(path: String, duration: float = 0.3) -> void:
+	# Fade to black
+	fade.mouse_filter = Control.MOUSE_FILTER_STOP
+	var tween := create_tween()
+	tween.tween_property(fade, \"modulate:a\", 1.0, duration)
+	await tween.finished
+​
+	# Swap the scene while the screen is black
+	get_tree().change_scene_to_file(path)
+​
+	# Fade back in
+	tween = create_tween()
+	tween.tween_property(fade, \"modulate:a\", 0.0, duration)
+	await tween.finished
+	fade.mouse_filter = Control.MOUSE_FILTER_IGNORE
+"
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1483790672]
+script = SubResource("GDScript_eo2u1")
+
+[node name="Fade" type="ColorRect" parent="." unique_id=1434978469]
+unique_name_in_owner = true
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0)

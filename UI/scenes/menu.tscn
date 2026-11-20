@@ -5,7 +5,6 @@
 [ext_resource type="Shader" uid="uid://drac4533au3i1" path="res://scenes/scroll.gdshader" id="3_iuh05"]
 [ext_resource type="Texture2D" uid="uid://c773hum8imxhu" path="res://assets/sprites/backgrounds/texture105.png" id="4_wlt46"]
 [ext_resource type="Script" uid="uid://dtlva5uyede1r" path="res://UI/scripts/juicy_button.gd" id="5_wlt46"]
-[ext_resource type="PackedScene" uid="uid://dh5vomjhe5gh3" path="res://UI/scenes/settings.tscn" id="6_2u3c5"]
 [ext_resource type="PackedScene" uid="uid://dykbi6mfsof5c" path="res://UI/scenes/credits.tscn" id="7_mqkct"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2u3c5"]
@@ -13,11 +12,7 @@ shader = ExtResource("3_iuh05")
 
 [sub_resource type="Theme" id="Theme_wlt46"]
 
-[sub_resource type="Theme" id="Theme_0arac"]
-
 [sub_resource type="Theme" id="Theme_upuy7"]
-
-[sub_resource type="Theme" id="Theme_2est8"]
 
 [node name="Menu" type="Control" unique_id=562527928]
 layout_mode = 3
@@ -54,10 +49,10 @@ stretch_mode = 1
 [node name="Title" type="RichTextLabel" parent="." unique_id=297324689]
 clip_contents = false
 layout_mode = 0
-offset_left = 88.0
-offset_top = 29.0
-offset_right = 232.0
-offset_bottom = 61.0
+offset_left = 82.0
+offset_top = 32.0
+offset_right = 226.0
+offset_bottom = 64.0
 theme = SubResource("Theme_wlt46")
 theme_type_variation = &"TitleLabel"
 bbcode_enabled = true
@@ -73,10 +68,10 @@ anchor_left = 0.384
 anchor_top = 0.39400002
 anchor_right = 0.60300004
 anchor_bottom = 0.97800004
-offset_left = 0.11999512
-offset_top = 0.0799942
-offset_right = 0.039978027
-offset_bottom = -0.040008545
+offset_left = -2.880005
+offset_top = 6.079994
+offset_right = -2.960022
+offset_bottom = 5.9599915
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_3hdng")
@@ -92,18 +87,6 @@ theme_type_variation = &"RedButton"
 text = "Play"
 script = ExtResource("5_wlt46")
 
-[node name="SettingsButton" type="Button" parent="VBoxContainer" unique_id=1989169700]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(50, 0)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-theme = SubResource("Theme_0arac")
-theme_type_variation = &"GreenButton"
-text = "Settings
-"
-script = ExtResource("5_wlt46")
-
 [node name="CreditsButton" type="Button" parent="VBoxContainer" unique_id=1798871032]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(50, 0)
@@ -116,17 +99,6 @@ text = "Credits
 "
 script = ExtResource("5_wlt46")
 
-[node name="QuitButton" type="Button" parent="VBoxContainer" unique_id=333938544]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(50, 0)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme = SubResource("Theme_2est8")
-theme_type_variation = &"YellowButton"
-text = "Quit"
-script = ExtResource("5_wlt46")
-
 [node name="Black" type="ColorRect" parent="." unique_id=495419483]
 unique_name_in_owner = true
 layout_mode = 1
@@ -137,9 +109,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
-
-[node name="Settings" parent="." unique_id=1772830835 instance=ExtResource("6_2u3c5")]
-unique_name_in_owner = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=173566246]
 layout_mode = 1

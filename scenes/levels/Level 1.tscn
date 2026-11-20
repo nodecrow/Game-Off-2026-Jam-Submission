@@ -9,7 +9,14 @@
 [ext_resource type="PackedScene" uid="uid://cjhtvhxxhjcxk" path="res://scenes/layers/base_layer.tscn" id="7_l2i67"]
 [ext_resource type="Shader" uid="uid://drac4533au3i1" path="res://scenes/scroll.gdshader" id="8_1fftf"]
 [ext_resource type="Texture2D" uid="uid://c773hum8imxhu" path="res://assets/sprites/backgrounds/texture105.png" id="9_aoo0h"]
+[ext_resource type="Script" uid="uid://cc1ncda7jqbph" path="res://scripts/textprompt.gd" id="10_05r5e"]
 [ext_resource type="PackedScene" uid="uid://di0roy2mx5gon" path="res://UI/scenes/radial_menu_button.tscn" id="10_b7qdl"]
+[ext_resource type="Texture2D" uid="uid://crahlmg0m38t2" path="res://assets/keyboard_w_outline.png" id="11_youkv"]
+[ext_resource type="Texture2D" uid="uid://cootidih5mns4" path="res://assets/keyboard_d_outline.png" id="12_trdk3"]
+[ext_resource type="Texture2D" uid="uid://ksximyu0cu46" path="res://assets/keyboard_s_outline.png" id="13_gecdc"]
+[ext_resource type="Texture2D" uid="uid://q6g4wn342ox1" path="res://assets/keyboard_a_outline.png" id="14_5yrvp"]
+[ext_resource type="Texture2D" uid="uid://epqj21skpoh6" path="res://assets/keyboard_p_outline.png" id="15_gecdc"]
+[ext_resource type="FontFile" uid="uid://cpwcltc7w2oka" path="res://assets/NicoClean-Monospaced.otf" id="16_5yrvp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rp0sa"]
 shader = ExtResource("8_1fftf")
@@ -45,6 +52,7 @@ offset_right = 320.0
 offset_bottom = 180.0
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
 
 [node name="TextureRect" type="TextureRect" parent="Background" unique_id=169721664]
 modulate = Color(0.017888177, 0.017888173, 0.016221547, 1)
@@ -59,6 +67,62 @@ grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("9_aoo0h")
 stretch_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Control" type="Control" parent="Background" unique_id=1454140827]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 51.0
+offset_top = 90.0
+offset_right = 91.0
+offset_bottom = 130.0
+script = ExtResource("10_05r5e")
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/Control" unique_id=1539660237]
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(18, -15.000004)
+scale = Vector2(0.3, 0.258)
+texture = ExtResource("11_youkv")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Background/Control" unique_id=1717020613]
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(35, 1.9073486e-06)
+scale = Vector2(0.3, 0.258)
+texture = ExtResource("12_trdk3")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Background/Control" unique_id=1600646025]
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(18, 1.9073486e-06)
+scale = Vector2(0.3, 0.258)
+texture = ExtResource("13_gecdc")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Background/Control" unique_id=386010625]
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(0.9999981, 1.9073486e-06)
+scale = Vector2(0.3, 0.258)
+texture = ExtResource("14_5yrvp")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Background/Control" unique_id=1838510550]
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(35, 20.000002)
+scale = Vector2(0.3, 0.258)
+texture = ExtResource("15_gecdc")
+
+[node name="Label" type="Label" parent="Background/Control" unique_id=1974507338]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.15
+anchor_top = 0.425
+anchor_right = 0.6
+anchor_bottom = 0.625
+theme_override_fonts/font = ExtResource("16_5yrvp")
+theme_override_font_sizes/font_size = 8
+text = "PAUSE"
 
 [node name="Radial" type="CanvasLayer" parent="." unique_id=155536325]
 

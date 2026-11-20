@@ -26,7 +26,10 @@ const LEVEL_18 = preload("uid://xlah0l21hhp2")
 const LEVEL_19 = preload("uid://8545qopdpgtl")
 const LEVEL_20 = preload("uid://b27fk4i21le0l")
 
+const END_GAME = preload("uid://b16tgxal3rfvh")
+
 signal level_selected
+
 
 
 var levels: Array[PackedScene] = [
@@ -50,6 +53,7 @@ var levels: Array[PackedScene] = [
 	LEVEL_18,
 	LEVEL_19,
 	LEVEL_20,
+	END_GAME
 ]
 
 var current_level: int = 0
@@ -59,6 +63,7 @@ func start_level(index: int) -> void:
 	current_level = index
 	level_selected.emit()
 	get_tree().change_scene_to_packed(levels[index])
+
 
 func is_level_unlocked(index: int) -> bool:
 	return highest_level_unlocked < index
